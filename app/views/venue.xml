@@ -2,9 +2,11 @@
 	<View id="container">
 		<View id="headerViewContainer"/>
 		<View id="maps" class="appContent">
-			<ScrollView id="scroller">
-				<ImageView id="venue"/>
-			</ScrollView>
+			<View id="venue" ns="Ti.Map">
+				<Annotation title="Ayre Hotel Astoria Palace" latitude='39.4713233' longitude='-0.375148'/>
+				<Annotation title="Colon station" latitude='39.47015825111372' longitude='-0.37091732025146484'/>
+				<Annotation title="Xativa station" latitude='39.467209730099555' longitude='-0.37738680839538574'/>
+			</View>
 			<View class="fauxShadow"/>
 		</View>
 	</View>

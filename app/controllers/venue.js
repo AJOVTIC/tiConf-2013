@@ -1,4 +1,4 @@
-var ui = require('ui');
+/*var ui = require('ui');
 
 $.headerView = new ui.HeaderView({
 	title: 'venueCaps',
@@ -19,4 +19,12 @@ $.headerView.on('change', function(e) {
 $.on('focus', function() {
 	$.venue.image = '/img/venue/venue-3rd-floor.png';
 	$.headerView.goTo(0);
+});
+*/
+
+$.venue.setRegion({
+	latitude: 39.4713233,
+	longitude: -0.375148,
+	latitudeDelta: 0.01,
+	longitudeDelta: 0.01
 });

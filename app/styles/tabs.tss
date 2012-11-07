@@ -6,12 +6,13 @@
 
 '.tab': {
 	zIndex:10,
-	width:'20%'
+	width:'16%'
 },
 
 '#postIcon': {
 	height:'46dp',
-	width:'64dp',
+	width: '100%',
+	// width:'64dp',
 	backgroundImage:'/img/tabs/btn-post-default.png',
 	backgroundSelectedImage:'/img/tabs/btn-post-pressed.png'
 },
@@ -19,17 +20,15 @@
 '#homeIcon': {
 	image:'/img/tabs/btn-home-pressed.png'
 },
-
 '#streamIcon': {
 	image:'/img/tabs/btn-stream-default.png'
 },
-
 '#agendaIcon': {
 	image:'/img/tabs/btn-agenda-default.png'
 },
-
 '#venueIcon': {
 	image:'/img/tabs/btn-venue-default.png'
+},
+'#speakersIcon': {
+	image:'/img/tabs/btn-speakers-default.png'
 }
-
-

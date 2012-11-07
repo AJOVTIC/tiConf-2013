@@ -5,19 +5,6 @@
 	bottom:'10dp'
 },
 
-'#scroller': {
-	zoomScale:0.5,
-	maxZoomScale:4,
-	minZoomScale:0.25,
-	scrollType:'horizontal',
-	contentWidth:1376,
-	contentHeight:553
-},
-
-'#scroller[formFactor=tablet]': {
-	zoomScale:1
-},
-
 '#venue': {
 	image:'/img/venue/venue-3rd-floor.png'
 },
@@ -46,5 +33,5 @@
 	top:'10dp',
 	left:'10dp',
 	right:'10dp',
-	height:Ti.UI.SIZE
+	bottom: '10dp'
 }
