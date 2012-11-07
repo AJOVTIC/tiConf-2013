@@ -1,9 +1,9 @@
 {
     "global": {
         "app": {
-            "authorName": "Fred Spencer",
-            "authorEmail": "fspencer@appcelerator.com",
-            "version": "0.0.1 Hackathon"
+            "authorName": "Tipsy&Tumbler Limited",
+            "authorEmail": "boydlee@gmail.com",
+            "version": "0.0.1"
         },
         "currentUser": {
             "loggedIn": false,

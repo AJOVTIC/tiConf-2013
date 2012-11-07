@@ -1,19 +1,21 @@
 //Tablet header emits navigation events
 if (Alloy.isTablet) {
 	var tabOffset = 121,
-		tabWidth = 60;
+		//TODO see how to set this for tablets
+		tabWidth = 50;
 		
 	var navOffsets = {
 		home:0,
 		agenda: tabWidth,
 		stream: tabWidth*2,
 		venue: tabWidth*3,
-		about: tabWidth*4
+		about: tabWidth*4,
+		speakers: tabWidth*5
 	};
 	
 	function doTab(name,noEvent) {
 		//Loop through tabs and set active/inactive
-		_.each(['home', 'agenda', 'stream', 'venue', 'about'], function(item) {
+		_.each(['home', 'agenda', 'stream', 'venue', 'about', 'speakers'], function(item) {
 			if (name === item) {
 				$[item+'Icon'].image = '/img/header/btn-tablet-'+item+'-pressed.png'
 			}
@@ -41,6 +43,10 @@ if (Alloy.isTablet) {
 	
 	$.venue.on('click', function() {
 		doTab('venue');
+	});
+	
+	$.speakers.on('click', function() {
+		doTab('speakers');
 	});
 	
 	//post is special, just fire event

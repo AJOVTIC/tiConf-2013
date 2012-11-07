@@ -2,7 +2,6 @@
 	backgroundColor: "white"
 },
 
-"#speakers": {
-	height: '90%',
-	backgroundColor: '#f00'
+"#speakersTableView": {
+	backgroundColor: '#cdcdcd'
 }

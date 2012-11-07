@@ -1,5 +1,5 @@
 <Alloy>
 	<View class="container">
-		<TableView id="speakers" />
+		<TableView id="speakersTableView" />
 	</View>
 </Alloy>
