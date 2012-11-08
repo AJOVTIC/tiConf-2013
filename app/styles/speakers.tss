@@ -3,5 +3,6 @@
 },
 
 "#speakersTableView": {
-	// backgroundColor: '#cdcdcd'
+	// backgroundColor: '#cdcdcd',
+	top: 55
 }
