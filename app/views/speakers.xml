@@ -1,5 +1,9 @@
 <Alloy>
 	<View class="container">
-		<TableView id="speakersTableView" />
+		<View class="contentHeader">
+			<Label class="contentHeaderLabel" textid="speakers"/>
+			<View class="fauxShadow"/>
+		</View>
+		<TableView id="speakersTableView" class="contentTable" />
 	</View>
 </Alloy>

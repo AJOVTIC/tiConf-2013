@@ -79,10 +79,32 @@ TableView: {
 '.childArrow': {
 	image:'/img/general/btn-right-arrow.png',
 	right:'5dp'
+},
+
+'.contentTable': {
+	backgroundColor: '#fff',
+	top: '50dp',
+	left: 10,
+	right: 10,
+	bottom:0
+},
+
+'.contentHeader': {
+	backgroundColor:'#ffffff',
+	top:'10dp',
+	left:'10dp',
+	right:'10dp',
+	height:'35dp'
+},
+
+'.contentHeaderLabel': {
+	color:'#373e47',
+	left:'10dp',
+	width:Ti.UI.SIZE,
+	height:Ti.UI.SIZE,
+	font: {
+		fontFamily:'Quicksand-Bold',
+		fontSize:'14dp'
+	}
 }
-
-
-
-
-
 

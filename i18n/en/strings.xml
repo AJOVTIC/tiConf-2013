@@ -57,6 +57,9 @@
 	<string name="activityStream">ACTIVITY STREAM</string>
 	<string name="activityStreamError">There was an error loading the latest activity stream - please try again later.</string>
 	
+	<string name="venue">VENUE</string>
+	<string name="speakers">SPEAKERS</string>
+
 	<string name="myProfile">MY PROFILE</string>
 	<string name="chooseAvatar">Choose a Profile Photo...</string>
 	<string name="connectTwitter">Connect to Twitter</string>

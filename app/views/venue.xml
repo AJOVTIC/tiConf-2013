@@ -1,7 +1,7 @@
 <Alloy>
 	<View id="container">
-		<View id="headerViewContainer">
-			<Label id="headerLabel" textid="activityStream"/>
+		<View id="headerViewContainer" class="contentHeader">
+			<Label class="contentHeaderLabel" textid="venue"/>
 			<View class="fauxShadow"/>
 		</View>
 		<View id="maps" class="appContent">
