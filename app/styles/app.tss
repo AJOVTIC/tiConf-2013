@@ -83,10 +83,10 @@ TableView: {
 
 '.contentTable': {
 	backgroundColor: '#fff',
-	top: '50dp',
+	top: 50,
 	left: 10,
 	right: 10,
-	bottom:0
+	bottom: 10
 },
 
 '.contentHeader': {

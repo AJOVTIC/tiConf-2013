@@ -1,8 +1,8 @@
 var tabs = [
 	'home',
 	'agenda',
-	'post',
 	'stream',
+	'post',
 	'venue',
 	'speakers',
 	'additionalContent'
@@ -23,6 +23,7 @@ var tabPositions = {
 	additionalContent:tabWidth*6*/
 };
 
+// tabs should really use "horizontal" layout
 for (var i = 0; i < tabs.length; ++i) {
 	tabPositions[tabs[i]] = $[tabs[i]].left = tabWidth * i;
 	if (tabs[i] != 'post') {

@@ -59,6 +59,9 @@
 	
 	<string name="venue">VENUE</string>
 	<string name="speakers">SPEAKERS</string>
+	<string name="additionalContent">ADDITIONAL CONTENT</string>
+	<string name="additionalContentSlides">SLIDES</string>
+	<string name="additionalContentVideo">VIDEO</string>
 
 	<string name="myProfile">MY PROFILE</string>
 	<string name="chooseAvatar">Choose a Profile Photo...</string>

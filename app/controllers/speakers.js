@@ -1,6 +1,8 @@
 
 var Speakers = require('Speakers');
 
+
+// refactor to Alloy MVC style
 function createRow(data) {
 
 	if (!data) {
@@ -27,7 +29,7 @@ function createRow(data) {
 
 	var subtitle = Ti.UI.createLabel({
 		text: data.subtitle,
-		left: 120,
+		left: 123,
 		top: 40,
 		color: "#0574bf",
 		font: {
@@ -56,6 +58,7 @@ for (var i = 0; i < Speakers.length; ++i) {
 	rows[i] = createRow(Speakers[i]);
 }
 
+// refactor to Alloy MVC style
 function showPopup(data) {
 
     var window = Ti.UI.createWindow({

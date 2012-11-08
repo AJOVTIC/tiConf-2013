@@ -75,7 +75,7 @@ var speakers = [
 		title: 'Sharry Stowell',
 		subtitle: 'Titan, runs LearningTitanium.com',
 		image: '/img/speakers/183472_6693685371_2437_n.jpg',
-		description: "Sharry is based near Norfolk, UK and is a senior web/mobile developer who currently works for a social enterprise creating applications for the Police &amp; County Councils. He is a Titanium Titan who runs LearningTitanium.com & BuiltWithTitanium.com, involved in several Ti events & the TideSDK project."
+		description: "Sharry is based near Norfolk, UK and is a senior web/mobile developer who currently works for a social enterprise creating applications for the Police & County Councils. He is a Titanium Titan who runs LearningTitanium.com & BuiltWithTitanium.com, involved in several Ti events & the TideSDK project."
 	},
 	{
 		title: 'Bob Sims',
