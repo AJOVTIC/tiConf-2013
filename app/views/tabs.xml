@@ -18,5 +18,8 @@
 		<View id="speakers" class="tab">
 			<ImageView id="speakersIcon"/>
 		</View>
+		<View id="additionalContent" class="tab">
+			<ImageView id="additionalContentIcon"/>
+		</View>
 	</View>
 </Alloy>

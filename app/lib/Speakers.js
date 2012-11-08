@@ -15,7 +15,7 @@ var speakers = [
 		title: 'Xavier Lacot',
 		subtitle: 'Co-Founder, JoliCode',
 		image: '/img/speakers/DSC_8277.JPG',
-		description: "Xavier is the co-founder of JoliCode, a French Web- and Mobile- expertise company which focuses on improving the quality of Web projects. </p><p>Xavier is interested in technologies related to PHP frameworks, the Semantic Web and mobile solutions. Since February 2012, he is the President of AFUP, the French PHP Users Association. He uses Titanium since 0.7, and has contributed some code to the community. He is in particular the author of joli.js, a lightweight yet powerful ORM for Titanium."
+		description: "Xavier is the co-founder of JoliCode, a French Web- and Mobile- expertise company which focuses on improving the quality of Web projects. Xavier is interested in technologies related to PHP frameworks, the Semantic Web and mobile solutions. Since February 2012, he is the President of AFUP, the French PHP Users Association. He uses Titanium since 0.7, and has contributed some code to the community. He is in particular the author of joli.js, a lightweight yet powerful ORM for Titanium."
 	},
 	{
 		title: 'Joe Maffia',
@@ -39,13 +39,13 @@ var speakers = [
 		title: 'Trevor Ward',
 		subtitle: 'TCE, Titan, TCAD',
 		image: '/img/speakers/tward_profile.png',
-		description: "Trevor havs been developing software for over 20 years, initially using Cobol before going into web development in the late 90′s using Perl, HTML, JavaScript and Oracle. In 2007 he started to use Ruby on Rails and Adobe Flex, before moving into mobile application development in early 2011, using the Appcelerator Titanium framework exclusively.</p><p><br/>Trevor runs numerous workshops and is the only current certified BNAPP trainer in the UK. You can reach him via http://www.thewarpedcoder.net"
+		description: "Trevor havs been developing software for over 20 years, initially using Cobol before going into web development in the late 90′s using Perl, HTML, JavaScript and Oracle. In 2007 he started to use Ruby on Rails and Adobe Flex, before moving into mobile application development in early 2011, using the Appcelerator Titanium framework exclusively. Trevor runs numerous workshops and is the only current certified BNAPP trainer in the UK. You can reach him via http://www.thewarpedcoder.net"
 	},
 	{
 		title: 'Liz Myers',
 		subtitle: 'Co-Founder: London-Titanium, BlackBerry Elite Member',
 		image: '/img/speakers/myers.png',
-		description: "Liz is a UX/UI Designer and Creative Technologist with more than 18 years experience working for blue chip companies such as: Adobe, Amazon, Microsoft, and Vodafone.<br/><br/>After a decade focused primarily on web-based applications, Liz made the switch to mobile in 2004 whilst working on a break-thru project with the Windows Mobile Group at Microsoft and has never looked back.  During the past 18 months, she has used both Titanium and BlackBerryWebWorks to publish her app, 2Scoops, on 3 platforms."
+		description: "Liz is a UX/UI Designer and Creative Technologist with more than 18 years experience working for blue chip companies such as: Adobe, Amazon, Microsoft, and Vodafone. After a decade focused primarily on web-based applications, Liz made the switch to mobile in 2004 whilst working on a break-thru project with the Windows Mobile Group at Microsoft and has never looked back.  During the past 18 months, she has used both Titanium and BlackBerryWebWorks to publish her app, 2Scoops, on 3 platforms."
 	},
 	{
 		title: 'Javier Rayón',
@@ -63,13 +63,13 @@ var speakers = [
 		title: 'Olivier Morandi',
 		subtitle: 'Titan, TCAD, TCMD',
 		image: '/img/speakers/olivier.png',
-		description: "Olivier is a software engineer working as a freelance consultant from his home at the feet of the North-Western Italy Alps. He spent a good part of the last decade doing academic research on technologies for high-speed network processing and writing compilers, before reinventing himself as a mobile and front-end developer.</p><p> <br>Olivier has used Titanium Mobile since version 0.7 and, when needed, enjoys breaking into native code for extending the framework. He's particularly interested in analyzing the performance limits of a cross platform solution like Titanium, so created TiProfiler. He also blogs at http://titaniumninja.com"
+		description: "Olivier is a software engineer working as a freelance consultant from his home at the feet of the North-Western Italy Alps. He spent a good part of the last decade doing academic research on technologies for high-speed network processing and writing compilers, before reinventing himself as a mobile and front-end developer. Olivier has used Titanium Mobile since version 0.7 and, when needed, enjoys breaking into native code for extending the framework. He's particularly interested in analyzing the performance limits of a cross platform solution like Titanium, so created TiProfiler. He also blogs at http://titaniumninja.com"
 	},
 	{
 		title: 'Grant Smith',
 		subtitle: '',
 		image: '/img/speakers/GrantSmith.jpg',
-		description: ">Grant has been a software developer for almost two decades, working in large firms. His current projects include Zapper Scan and Visual-IDE - a visual interface designer and builder for Titanium mobile projects."
+		description: "Grant has been a software developer for almost two decades, working in large firms. His current projects include Zapper Scan and Visual-IDE - a visual interface designer and builder for Titanium mobile projects."
 	},
 	{
 		title: 'Sharry Stowell',
@@ -84,7 +84,5 @@ var speakers = [
 		description: "Bob Sims is an American military officer who has served as an Information Systems Manager for 7 years at several international locations. He has developed and been an advocate for multiple projects using open source solutions such as eZpublish, Drupal, and Titanium Mobile.  Bob maintains several organizational web and mobile app projects as part of his current assignment at the NATO Joint Force Training Centre (JFTC) in Bydgoszcz, Poland."
 	}
 ];
-
-Ti.API.info('Speakers length: ' + speakers.length);
 
 module.exports = speakers;

@@ -131,7 +131,7 @@ $.facebook.on('click', function() {
 });
 
 $.twitter.on('click', function() {
-	if (User.confirmLogin.toTwitter()) {
+	/*if (User.confirmLogin.toTwitter()) {
 		User.logoutTwitter(function(e) {
 			twitterOff();
 		});
@@ -140,7 +140,8 @@ $.twitter.on('click', function() {
 		User.linkToTwitter(function(e) {
 			twitterOn();
 		});
-	}
+	}*/
+	alert('Twitter!');
 });
 
 

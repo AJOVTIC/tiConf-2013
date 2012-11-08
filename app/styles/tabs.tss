@@ -6,7 +6,7 @@
 
 '.tab': {
 	zIndex:10,
-	width:'16%'
+	width:'14%'
 },
 
 '#postIcon': {
@@ -30,5 +30,8 @@
 	image:'/img/tabs/btn-venue-default.png'
 },
 '#speakersIcon': {
+	image:'/img/tabs/btn-speakers-default.png'
+},
+'#additionalContentIcon': {
 	image:'/img/tabs/btn-speakers-default.png'
 }

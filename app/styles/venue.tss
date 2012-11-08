@@ -34,4 +34,14 @@
 	left:'10dp',
 	right:'10dp',
 	bottom: '10dp'
-}
+},
+'#headerLabel': {
+	color:'#373e47',
+	left:'10dp',
+	width:Ti.UI.SIZE,
+	height:Ti.UI.SIZE,
+	font: {
+		fontFamily:'Quicksand-Bold',
+		fontSize:'14dp'
+	}
+},

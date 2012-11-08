@@ -1,6 +1,9 @@
 <Alloy>
 	<View id="container">
-		<View id="headerViewContainer"/>
+		<View id="headerViewContainer">
+			<Label id="headerLabel" textid="activityStream"/>
+			<View class="fauxShadow"/>
+		</View>
 		<View id="maps" class="appContent">
 			<View id="venue" ns="Ti.Map">
 				<Annotation title="Ayre Hotel Astoria Palace" latitude='39.4713233' longitude='-0.375148'/>
