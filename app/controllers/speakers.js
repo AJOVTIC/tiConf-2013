@@ -1,56 +1,16 @@
 
 var Speakers = require('Speakers');
 
-
-// refactor to Alloy MVC style
 function createRow(data) {
 
 	if (!data) {
 		return;
 	}
 
-	var row = Ti.UI.createTableViewRow({
-		height: 100,
-		selectedBackgroundColor:'#9a9a9a',
-		className:'Row'
-	});
+    var row = Alloy.createController('speakers_row', data);
 
 
-	var title = Ti.UI.createLabel({
-		text: data.title,
-		left: 120,
-		top: 20,
-		color: "#0574bf",
-		font: {
-			fontSize: 18,
-			fontWeight: 'bold'
-		}
-	});
-
-	var subtitle = Ti.UI.createLabel({
-		text: data.subtitle,
-		left: 123,
-		top: 40,
-		color: "#0574bf",
-		font: {
-			fontSize: 12
-		}
-	});
-
-	var picture = Ti.UI.createImageView({
-		image: data.image,
-		left: 10,
-		width: 90,
-		height: 90
-	})
-
-	row.add(title);
-	row.add(subtitle);
-	row.add(picture);
-
-	row._data = data;
-
-	return row;
+    return row.getView();
 }
 
 var rows = [];

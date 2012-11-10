@@ -1,0 +1,30 @@
+"#row": {
+	height: 100,
+	selectedBackgroundColor:'#9a9a9a',
+	className:'Row'
+},
+
+"#title": {
+	left: 120,
+	top: 20,
+	color: "#0574bf",
+	font: {
+		fontSize: 18,
+		fontWeight: 'bold'
+	}
+},
+
+"#subtitle": {
+	left: 123,
+	top: 40,
+	color: "#0574bf",
+	font: {
+		fontSize: 12
+	}
+},
+
+"#picture": {
+	left: 10,
+	width: 90,
+	height: 90
+}
