@@ -1,0 +1,8 @@
+<Alloy>
+	<Window id="win">
+		<View id="wrapper">
+			<View id="container" />
+		</View>
+		<Label id="close" />
+	</Window>
+</Alloy>

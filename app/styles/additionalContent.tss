@@ -18,4 +18,8 @@
 	right: 10,
 	top: '100%',
 	height: '90%'
+},
+
+"#presentation": {
+	top: 100
 }
