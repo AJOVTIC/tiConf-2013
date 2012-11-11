@@ -1,5 +1,8 @@
 var ui = require('ui');
 
+var SLIDES = 'SLIDES';
+var VIDEOS = 'VIDEOS';
+
 function createRow(data) {
 	if (!data) {
 		return;
@@ -35,10 +38,24 @@ function createRow(data) {
 	row.add(title);
 	row.add(author);
 
-	row.slides = data.slides;
+	row._data = data;
 
 	return row;
 }
+
+
+function createRows(data) {
+	if (!data) {
+		return [];
+	}
+	var rows = [];
+	for (var i = 0; i < data.length; ++i) {
+		rows[i] = createRow(data[i]);
+	}
+
+	return rows;
+}
+
 
 //Create handheld UI and controls
 if (!Alloy.isTablet) {
@@ -51,44 +68,61 @@ if (!Alloy.isTablet) {
 
 	$.contentTypes.add($.headerView);
 
+	var selection = SLIDES;
+
 	$.headerView.on('change', function(e) {
 		// alert(e.selection);
+		selection = e.selection;
+		if (selection == SLIDES) {
+			$.presentation.setData(createRows(Slides));
+		}
+		else {
+			$.presentation.setData(createRows(Videos));
+		}
 	});
 
 	var Slides = require('Slides');
+	var Videos = require('Videos');
 
-	var rows = [];
-
-	for (var i = 0; i < Slides.length; ++i) {
-		rows[i] = createRow(Slides[i]);
-	}
-
-	$.presentation.setData(rows);
+	$.presentation.setData(createRows(Slides));
 
 	$.presentation.on('click', function(e) {
+
 		var popup = Alloy.createController('popup');
 
-		var aSlides = e.row.slides;
-		
-		var views = [], v, im;
-		for (var i = 0; i < aSlides.length; ++i) {
-			
-			v = Ti.UI.createView();
+		var aData;
 
-			im = Ti.UI.createImageView({
-				image: aSlides[i]
+		if (selection == SLIDES) {
+			aData = e.row._data.slides;
+			var views = [], v, im;
+			for (var i = 0; i < aData.length; ++i) {
+				
+				v = Ti.UI.createView();
+
+				im = Ti.UI.createImageView({
+					image: aData[i]
+				});
+				v.add(im);
+				views[i] = v;
+			}
+
+			var scrollableView = Ti.UI.createScrollableView({
+				views: views,
+				height: '85%',
+				width: '85%'
 			});
-			v.add(im);
-			views[i] = v;
+
+			popup.getView().add(scrollableView);
 		}
-
-		var scrollableView = Ti.UI.createScrollableView({
-			views: views,
-			height: '85%',
-			width: '85%'
-		});
-
-		popup.getView().add(scrollableView);
+		else {
+			aData = e.row._data.video;
+			popup.getView().add(Ti.UI.createWebView({
+				url: aData,
+				height: '85%',
+				width: '85%'
+			}));
+		}
+		
 	});
 
 }
