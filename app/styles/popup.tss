@@ -1,0 +1,43 @@
+"#win": {
+	backgroundColor: "transparent",
+    zIndex: 1000
+},
+
+"#container": {
+	top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+    backgroundColor: "#fff"
+},
+
+"#wrapper": {
+	top: 10,
+    right: 10,
+    bottom: 10,
+    left: 10,
+    backgroundColor: "#52D3FE",
+    border: 10,
+    borderColor: "#52D3FE",
+    borderRadius: 10,
+    borderWidth: 4,
+    // zIndex: -1
+},
+
+"#close": {
+	font: {
+        fontSize: 18,
+        fontWeight: "bold"
+    },
+    backgroundColor: "#52D3FE",
+    borderColor: "#52D3FE",
+    color: "#fff",
+    style: 0,
+    borderRadius: 6,
+    text: "X",
+    textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+    top: 8,
+    right: 8,
+    width: 30,
+    height: 30
+}

@@ -5,11 +5,10 @@
 			<View class="fauxShadow"/>
 		</View>
 		<View id="contentTypes" class="contentHeader">
-			<!-- <Label id="slides" class="contentHeaderLabel" textid="additionalContentSlides"/>
-			<Label id="video" class="contentHeaderLabel" textid="additionalContentVideo"/>
-			<View class="fauxShadow"/> -->
+			
 		</View>
 		<View id="slides" />
 		<View id="video" />
+		<TableView id="presentation" class="contentTable" />
 	</View>
 </Alloy>
