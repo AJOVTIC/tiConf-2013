@@ -1,6 +1,6 @@
 '#container': {
-	backgroundImage:'/img/header/bg-title.png',
-	height:'45dp',
+	backgroundImage:'/img/header/header-bg.png',
+	height:'44dp',
 	top:0
 },
 
@@ -15,7 +15,7 @@
 },
 
 '#underline': {
-	backgroundColor:'#0574bf',
+	backgroundColor:'#ccc',
 	bottom:0,
 	height:'2dp'
 },

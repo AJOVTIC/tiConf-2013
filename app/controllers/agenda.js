@@ -3,11 +3,12 @@ var moment = require('moment'),
 	Session = require('Session');
 	
 //Session table view data and conference dates
-var sunday = [],
-	monday = [],
-	tuesday = [],
-	monDate = moment('Oct 22, 2012'),
-	tueDate = moment('Oct 23, 2012');
+var friday = [],
+	saturday = [],
+	sunday = [],
+	friDate = moment('Feb 22, 2013'),
+	satDate = moment('Feb 23, 2013'),
+	sunDate = moment('Feb 24, 2013');
 	
 $.loading = Alloy.createController('loading');
 $.index.add($.loading.getView());
@@ -104,5 +105,3 @@ $.agendaTable && ($.agendaTable.addEventListener('click', showDetail));
 $.sundayTable && ($.sundayTable.addEventListener('click', showDetail));
 $.mondayTable && ($.mondayTable.addEventListener('click', showDetail));
 $.tuesdayTable && ($.tuesdayTable.addEventListener('click', showDetail));
-
-

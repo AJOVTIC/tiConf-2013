@@ -18,20 +18,6 @@ if (userDetails.attributes.title) {
 //Attempt to grab and use the current profile image
 $.avatar.image = User.generateAvatarURL();
 
-$.logout.on('click', function() {
-	$.loading.start();
-	$.index.add($.loading.getView());
-	User.logout(function(e) {
-		$.loading.stop();
-		$.index.remove($.loading.getView());
-		if (e.success) {
-			Ti.App.fireEvent('app:logout');
-		}
-		else {
-			ui.alert('logoutError', 'logoutErrorText');
-		}
-	});
-});
 
 //Handle image attachment
 $.avatar.on('click', function() {

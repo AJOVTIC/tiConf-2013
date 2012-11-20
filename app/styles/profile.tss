@@ -2,7 +2,7 @@
 	height:'34dp',
 	right:'140dp',
 	left:'5dp',
-	top:'5dp'
+	top:'10dp'
 },
 
 '#myProfile': {
@@ -14,14 +14,6 @@
 		fontFamily:'Quicksand-Bold',
 		fontSize:'14dp'
 	}
-},
-
-'#logout': {
-	top:'5dp',
-	width:'125dp',
-	height:'34dp',
-	right:'5dp',
-	backgroundImage:'/img/profile/logoutButton.png'
 },
 
 '#personal': {

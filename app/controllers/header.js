@@ -68,16 +68,12 @@ $.setBackVisible = function(toggle) {
 		if (toggle) {
 			$.back.enabled = true;
 			$.back.visible = true;
-			$.about.enabled = false;
-			$.about.visible = false;
 			$.profile.visible = false;
 			$.profile.enabled = false;
 		}
 		else {
 			$.back.enabled = false;
 			$.back.visible = false;
-			$.about.enabled = true;
-			$.about.visible = true;
 			$.profile.visible = true;
 			$.profile.enabled = true;
 		}
@@ -98,10 +94,6 @@ function profileOn() {
 	$.profile.visible = true;
 }
 
-function aboutOn() {
-	$.about.enabled = true;
-	$.about.visible = true;
-}
 
 Ti.App.addEventListener('app:close.drawer', function(e) {
 	//Right now we only go one level deep with the drawer on handheld
@@ -109,14 +101,9 @@ Ti.App.addEventListener('app:close.drawer', function(e) {
 		profileOn();
 	}
 	
-	else if (e.controller === 'about' || !Alloy.isTablet) {
-		aboutOn();
-	}
-	
 	//On all others, assume we need to re-enable both
 	else {
 		profileOn();
-		aboutOn();
 	}
 });
 
@@ -128,27 +115,8 @@ function doProfile() {
 		$.profile.enabled = false;
 		$.profile.visible = false;
 		
-		if (!Alloy.isTablet) {
-			$.about.enabled = false;
-			$.about.visible = false;
-		}
 	}
 }
 $.profile.on('click', doProfile);
 
-function doAbout() {
-	if ($.about.enabled) {
-		Ti.App.fireEvent('app:open.drawer', {
-			controller:'about'
-		});
-		if (!Alloy.isTablet) {
-			$.profile.enabled = false;
-			$.profile.visible = false;
-		}
-		
-		$.about.enabled = false;
-		$.about.visible = false;
-	}
-}
-$.about.on('click', doAbout);
 

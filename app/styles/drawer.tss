@@ -1,7 +1,7 @@
 '#container': {
 	top:'45dp',
 	bottom:0,
-	backgroundColor:'#e4e7ea'
+	backgroundImage: '/img/home/background.png'
 },
 
 '#container[formFactor=tablet]': {

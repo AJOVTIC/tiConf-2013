@@ -3,11 +3,12 @@
 },
 
 '#content': {
-	top:'45dp'
+	top:'43dp',
+	backgroundImage: '/img/home/background.png'
 },
 
 '#content[formFactor=handheld]': {
-	bottom:'46dp'
+	bottom:'43dp'
 },
 
 '#content[formFactor=tablet]': {
@@ -18,5 +19,5 @@
 '#scrollContent': {
 	layout:'horizontal',
 	width:'1280dp',
-	backgroundColor:'blue'
+	backgroundColor:'white'
 }

@@ -5,12 +5,13 @@ var Cloud = require('ti.cloud'),
 //but force a refresh after a certain amount of time TODO
 var sessions = [],
 	days = {
+		friday: [],
+		saturday: [],
 		sunday: [],
-		monday: [],
-		tuesday: [],
 	},
-	monDate = moment('Oct 22, 2012'),
-	tueDate = moment('Oct 23, 2012');
+	friDate = moment('Oct 22, 2012'),
+	satDate = moment('Oct 23, 2012'),
+	sunDate = moment('Oct 23, 2012');
 
 function Session() {}
 

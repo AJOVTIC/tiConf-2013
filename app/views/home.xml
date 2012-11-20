@@ -2,24 +2,12 @@
 	<View id="index" class="container">
 		<View id="dashboard" formFactor="handheld">
 			<View id="now">
-				<Label id="title" text="Morning Keynote"/>
-				<Label id="presenter" text="Jeff Haynie, CEO, Appcelerator"/>
-				<Label id="location" text="Grand Ballroom"/>
 			</View>
 
-			<View id="stream">
-				<TableView id="streamTable"/>
-			</View>
 		</View>
 		
 		<View id="tabletDash" formFactor="tablet">
 			<View id="nowContainer">
-				<!-- Code duplication, should widgetize -->
-				<View id="now">
-					<Label id="title" text="Morning Keynote"/>
-					<Label id="presenter" text="Jeff Haynie, CEO, Appcelerator"/>
-					<Label id="location" text="Grand Ballroom"/>
-				</View>
 				
 				<View id="agendaPeek" class="appContent">
 					<Label id="agendaHeader" class="blueHeader" textid="sunday"/>
@@ -28,19 +16,10 @@
 				</View>
 			</View>
 			
-			<View id="streamContainer">
-				<View id="streamPeek">
-					<View id="streamHeader" class="appContent">
-						<Label id="headerLabel" textid="activityStream"/>
-						<View class="fauxShadow"/>
-					</View>
-					<TableView id="streamTable"/>
-				</View>
-			</View>
 			
 		</View>
 		
-		<View id="sponsorsContainer" formFactor="tablet">
+		<View id="sponsorsContainer">
 				<Label id="sponsorHeader" textid="sponsorHeader"/>
 				<View id="sponsorBox" class="appContent">
 					<ScrollView scrollType="horizontal">
@@ -53,6 +32,9 @@
 							<ImageView image="/img/home/sponsors/box.png" width="42dp" height="30dp"/>
 							<View class="spacer"/>
 							<ImageView image="/img/home/sponsors/utest.png" width="65dp" height="26dp"/>
+							<View class="spacer"/>
+						</View>
+						<View id="horizontalContainer2">
 							<View class="spacer"/>
 							<ImageView image="/img/home/sponsors/venturebeat.png" width="136dp" height="26dp"/>
 							<View class="spacer"/>

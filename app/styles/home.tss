@@ -1,56 +1,20 @@
 '#now': {
-	top:'10dp',
-	left:'10dp',
-	right:'10dp',
-	height:'150dp',
-	backgroundImage:'/img/home/now/dashboard-box1-talks.png'
+	top:'100dp',
+	left:'50dp',
+	right:'50dp',
+	height:'110dp',
+	width: '220dp',
+	backgroundImage:'/img/home/ticket.png'
 },
 
 '#nowImage': {
 	top:'10dp',
-	left:'10dp',
+	left:'40dp',
 	bottom:'10dp',
-	width:'300dp',
-	backgroundImage:'/img/home/now/dashboard-box1-talks.png'
+	width:'220dp',
+	backgroundImage:'/img/home/ticket.png'
 },
 
-'#title': {
-	left:'5dp',
-	right:'20dp',
-	color:'#ffffff',
-	font: {
-		fontWeight:'bold',
-		fontSize:'18dp'
-	}
-},
-
-'#presenter': {
-	left:'5dp',
-	right:'15dp',
-	bottom:'20dp',
-	height:Ti.UI.SIZE,
-	ellipsize:true,
-	wordWrap:false,
-	minimumFontSize:'12dp',
-	color:'#ffffff',
-	font: {
-		fontSize:'12dp'
-	}
-},
-
-'#location': {
-	left:'5dp',
-	right:'15dp',
-	height:Ti.UI.SIZE,
-	bottom:'5dp',
-	ellipsize:true,
-	wordWrap:false,
-	minimumFontSize:'12dp',
-	color:'#ffffff',
-	font: {
-		fontSize:'12dp'
-	}
-},
 
 '#stream': {
 	top:'170dp',
@@ -103,7 +67,8 @@
 	top:0,
 	left:0,
 	width:'320dp',
-	bottom:'100dp'
+	bottom:'100dp',
+	backgroundImage: '/img/home/background.png'
 },
 
 '#firstSession': {
@@ -163,7 +128,7 @@
 	bottom:0,
 	left:0,
 	right:0,
-	height:'100dp'
+	height:'160dp'
 },
 
 '#sponsorBox': {
@@ -175,8 +140,16 @@
 
 '#horizontalContainer': {
 	height:'60dp',
-	width:'810dp',
-	layout:'horizontal'
+	width:'410dp',
+	layout:'horizontal',
+	top: '0dp'
+},
+
+'#horizontalContainer2': {
+	height:'60dp',
+	width:'410dp',
+	layout:'horizontal',
+	bottom: '0dp'
 },
 
 '.spacer': {
