@@ -1,10 +1,11 @@
 '#now': {
-	top:'100dp',
-	left:'50dp',
-	right:'50dp',
-	height:'110dp',
-	width: '220dp',
-	backgroundImage:'/img/home/ticket.png'
+	top:'10dp',
+	left:'10dp',
+	right:'10dp',
+	bottom: '10dp',
+	backgroundColor:'#ffffff',
+	height: Ti.UI.FILL,
+	width: '300dp'
 },
 
 '#nowImage': {
