@@ -16,6 +16,26 @@
 	backgroundImage:'/img/home/ticket.png'
 },
 
+'#lblHome': {
+	top: '35dp',
+	left: '10dp',
+	right: '10dp',
+	font: {
+		fontFamily:'Quicksand-Bold',
+		fontSize:'13dp'
+	}
+},
+'#lblEventBrite': {
+	top: '10dp',
+	left: '10dp',
+	right: '10dp',
+	font: {
+		fontFamily:'Quicksand-Bold',
+		fontSize:'15dp'
+	},
+	color: 'Orange'
+},
+
 
 '#stream': {
 	top:'170dp',
@@ -44,7 +64,8 @@
 
 '#sponsorHeader': {
 	top:0,
-	textAlign:'center',
+	left: '20dp',
+	textAlign:'left',
 	color:'#787878',
 	font: {
 		fontFamily:'Quicksand-Bold',

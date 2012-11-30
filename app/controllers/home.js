@@ -4,7 +4,7 @@ var ui = require('ui'),
 	Session = require('Session');
 
 
-$.now.on('click', function(){
+$.lblEventBrite.on('click', function(){
 	Ti.Platform.openURL('http://ticonf-2013.eventbrite.com/');
 });
 

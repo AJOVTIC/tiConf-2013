@@ -5,9 +5,10 @@
 },
 
 '#logo': {
-	image:'/img/general/codestrong-bar-logo.png',
-	height:'22dp',
-	width:'81dp'
+	image:'/img/header/ticonf_logo2.png',
+	height:'33dp',
+	width:'67dp',
+	zIndex: 9999
 },
 
 '#logo[formFactor=tablet]': {

@@ -35,7 +35,7 @@
 	<string name="agendaNetworkError">We were unable to retrieve session data at this time.  Please check you network connection.</string>
 	
 	<string name="featuredSponsors">FEATURED SPONSORS</string>
-	<string name="sponsorHeader">SPECIAL THANKS TO OUR SPONSORS!</string>
+	<string name="sponsorHeader">SPONSORED BY:</string>
 	
 	<string name="attachPhoto">Attach A Photo...</string>
 	<string name="camera">From Camera</string>
