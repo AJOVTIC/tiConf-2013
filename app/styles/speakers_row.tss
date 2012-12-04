@@ -4,7 +4,7 @@
 	className:'Row'
 },
 
-"#title": {
+"#name": {
 	left: 120,
 	top: 20,
 	color: "#0574bf",
@@ -14,7 +14,7 @@
 	}
 },
 
-"#subtitle": {
+"#byline": {
 	left: 123,
 	top: 40,
 	color: "#0574bf",
@@ -23,7 +23,7 @@
 	}
 },
 
-"#picture": {
+"#photo": {
 	left: 10,
 	width: 90,
 	height: 90

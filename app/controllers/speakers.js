@@ -13,10 +13,21 @@ function createRow(data) {
     return row.getView();
 }
 
-var rows = [];
-for (var i = 0; i < Speakers.length; ++i) {
-	rows[i] = createRow(Speakers[i]);
-}
+Speakers.get(function(data) {
+
+    // alert(data.length);
+
+    var rows = [];
+    
+    for (var i = 0; i < data.length; ++i) {
+        rows[i] = createRow(data[i]);
+    }
+
+    // alert(rows.length);
+
+    $.speakersTableView.setData(rows);
+});
+
 
 // refactor to Alloy MVC style
 function showPopup(data) {
@@ -140,9 +151,6 @@ function showPopup(data) {
         }), window.animate(tooBig);
     }
 }
-
-$.speakersTableView.setData(rows);
-
 
 $.speakersTableView.on('click', function(e) {
 	// alert(e.row._data);

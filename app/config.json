@@ -9,6 +9,7 @@
             "loggedIn": false,
             "data": null
         },
+        "baseUrl": "http://50.56.211.225/",
         "refreshRoars": null,
         "refreshProfileRoars": null,
         "currentWin": null,

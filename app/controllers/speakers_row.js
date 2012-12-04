@@ -1,7 +1,7 @@
 var args = arguments[0] || {};
 
-$.title.text = args.title;
-$.subtitle.text = args.subtitle;
-$.picture.image = args.image;
+$.name.text = args.name;
+$.byline.text = args.byline;
+$.photo.image = args.photo ? args.photo.url : '';
 
 $.getView()._data = args;

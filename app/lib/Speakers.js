@@ -85,4 +85,20 @@ var speakers = [
 	}
 ];
 
-module.exports = speakers;
+var Dpd = require('Dpd');
+
+var Speaker = new Dpd(Alloy.CFG.baseUrl + 'speakers/');
+
+// alert(Alloy.CFG.baseUrl);
+
+// var Speakers = new Dpd(Alloy.CFG'')
+
+var SpeakersModule = {
+	get: function(callback) {
+		if (callback) {
+			callback(speakers);
+		}
+	}
+}
+
+module.exports = Speaker;
