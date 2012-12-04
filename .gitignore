@@ -7,4 +7,4 @@ build.log
 .fastdev.lock
 tiapp.xml
 Resources
-plugin.pyc
+*.pyc
