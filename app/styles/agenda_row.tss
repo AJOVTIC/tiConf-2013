@@ -1,0 +1,33 @@
+"#row": {
+	height: 70,
+	selectedBackgroundColor: "#cdcdcd",
+	className: "agendaRow"
+},
+
+"#title": {
+	top: 10,
+	left: 10,
+	ellipsize: true,
+	wordWrap: false,
+	color: "#373e47",
+	font: {
+		fontWeight: "bold",
+		fontSize: 14
+	}
+},
+
+"#speakerName": {
+	bottom: 10,
+	left: 10,
+	font: {
+		fontSize: 13
+	}
+},
+
+"#time": {
+	right: 10,
+	bottom: 10,
+	font: {
+		fontSize: 11
+	}
+}

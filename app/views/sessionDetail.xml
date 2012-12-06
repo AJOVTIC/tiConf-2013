@@ -1,8 +1,8 @@
 <Alloy>
 	<View id="index">
-		<Label id="name"/>
-		<Label id="presenter" class="subtitle"/>
-		<Label id="location" class="subtitle"/>
+		<Label id="title"/>
+		<Label id="speakerName" class="subtitle"/>
+		<Label id="track" class="subtitle"/>
 		<Label id="description"/>
 	</View>
 </Alloy>

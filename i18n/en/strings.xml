@@ -25,12 +25,12 @@
 	<string name="venueCaps">LOCATION MAP</string>
 	
 	<string name="agendaCaps">AGENDA</string>
-	<string name="sun">FRI</string>
-	<string name="mon">SAT</string>
-	<string name="tue">SUN</string>
-	<string name="sunday">FRIDAY</string>
-	<string name="monday">SATURDAY</string>
-	<string name="tuesday">SUNDAY</string>
+	<string name="fri">FRI</string>
+	<string name="sat">SAT</string>
+	<string name="sun">SUN</string>
+	<string name="friday">FRIDAY</string>
+	<string name="saturday">SATURDAY</string>
+	<string name="sunday">SUNDAY</string>
 	<string name="sessionData">Fetching session data...</string>
 	<string name="agendaNetworkError">We were unable to retrieve session data at this time.  Please check you network connection.</string>
 	
@@ -75,7 +75,7 @@
 	<string name="source">OPEN SOURCE</string>
 	<string name="aboutTwo">This application is open source under the Apache 2.0 License, and is available for download at http://bit.ly/codestrong_src</string>
 	<string name="specialThanks">SPECIAL THANKS</string>
-	<string name="aboutThree">We'd like to also give special thanks to Maria Iu, Greg DiPaolo, Monica Malone, Lisa Kohn, Tony Lukasavage, Fred Spencer, Kevin Whinnery, and the rest of the Appcelerator team that helped make this application possible. Code Strong!</string>
+	<string name="aboutThree">We'd like to also give special thanks to the Appcelerator team that helped make this application possible. Code Strong!</string>
 
 	<string name="pinch">Pinch to zoom on this photo</string>
 	<string name="gravatar">Your Appcelerator account uses Gravatar - change this photo at gravatar.com</string>

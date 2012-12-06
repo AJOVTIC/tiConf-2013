@@ -1,35 +1,35 @@
-'#index': {
-	layout:'vertical'
+"#index": {
+	layout: "vertical"
 },
 
-'#name': {
-	color:'#787878',
-	top:'10dp',
-	left:'10dp',
-	right:'10dp',
+"#title": {
+	color: "#787878",
+	top: 10,
+	left: 10,
+	right: 10,
 	font: {
-		fontSize:'18dp',
-		fontWeight:'bold'
+		fontSize: 18,
+		fontWeight: "bold"
 	}
 },
 
-'.subtitle': {
-	color:'#787878',
-	top:'2dp',
-	left:'10dp',
-	right:'10dp',
+".subtitle": {
+	color: "#787878",
+	top: 2,
+	left: 10,
+	right: 10,
 	font: {
-		fontSize:'12dp',
-		fontStyle:'italic'
+		fontSize: 12,
+		fontStyle: "italic"
 	}
 },
 
-'#description': {
-	top:'20dp',
-	left:'10dp',
-	right:'10dp',
-	color:'#000',
+"#description": {
+	top: 20,
+	left: 10,
+	right: 10,
+	color: "#000",
 	font:{
-		fontSize:'14dp'
+		fontSize: 14
 	}
 }

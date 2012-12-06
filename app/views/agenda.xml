@@ -1,26 +1,19 @@
 <Alloy>
 	<View id="index">
 		<View class="container">
-			<View class="agendaColContainer" formFactor="tablet">
-				<View id="sun" class="appContent agendaColumn">
-					<Label class="blueHeader dayHeader" textid="friday"/>
-					<TableView id="fridayTable" class="dayTable"/>
-					<View class="fauxShadow"/>
-				</View>
-			</View>	
 			
 			<View class="agendaColContainer" formFactor="tablet">
-				<View id="mon" class="appContent agendaColumn">
+				<View id="dayOne" class="appContent agendaColumn">
 					<Label class="blueHeader dayHeader" textid="saturday"/>
-					<TableView id="saturdayTable" class="dayTable"/>
+					<TableView id="dayOneTable" class="dayTable"/>
 					<View class="fauxShadow"/>
 				</View>
 			</View>
 			
 			<View class="agendaColContainer" formFactor="tablet">
-				<View id="tue" class="appContent agendaColumn">
+				<View id="dayTwo" class="appContent agendaColumn">
 					<Label class="blueHeader dayHeader" textid="sunday"/>
-					<TableView id="sundayTable" class="dayTable"/>
+					<TableView id="dayTwoTable" class="dayTable"/>
 					<View class="fauxShadow"/>
 				</View>
 			</View>

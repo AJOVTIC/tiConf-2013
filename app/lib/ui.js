@@ -81,6 +81,8 @@ exports.FauxShadow = FauxShadow;
  * })
  * 
  */
+
+ //TODO Rewrite as Alloy controller
 exports.HeaderView = function(options) {
 	var self = Ti.UI.createView(_.extend({
 		backgroundColor:'#fff',
@@ -166,59 +168,6 @@ exports.HeaderView = function(options) {
 	
 	return self;
 };
-
-//Helper to dynamically generate a session table view row
-function AgendaRow(session) {
-	var self = Ti.UI.createTableViewRow({
-		height:'55dp',
-		selectedBackgroundColor:'#cdcdcd',
-		className:'agendaRow'
-	});
-	self.sessionObject = session;
-	
-	//Convert session date strings into moment objects
-	var start = moment(session.start_time);
-	
-	self.add(Ti.UI.createLabel({
-		text:session.name,
-		top:0,
-		left:'60dp',
-		right:0,
-		height:'18dp',
-		ellipsize:true,
-		wordWrap:false,
-		minimumFontSize:'14dp',
-		color:'#373e47',
-		font: {
-			fontWeight:'bold',
-			fontSize:'14dp'
-		}
-	}));
-	
-	function smallText(text, top, left, bold, color) {
-		return Ti.UI.createLabel({
-			text:text,
-			top:top,
-			left:left,
-			color:color||'#787878',
-			height:'14dp',
-			ellipsize:true,
-			wordWrap:false,
-			minimumFontSize:'10dp',
-			font: {
-				fontSize:'10dp',
-				fontWeight:bold||'normal'
-			}
-		});
-	}
-	
-	self.add(smallText(session.custom_fields.presenter, '17dp', '60dp'));
-	self.add(smallText(session.custom_fields.location, '32dp', '60dp'));
-	self.add(smallText(start.format('h:mma'), 0, 0, 'bold', '#373e47'));
-	
-	return self;
-}
-exports.AgendaRow = AgendaRow;
 
 function StatusView(status) {
 	var created = moment(status.created_at);
