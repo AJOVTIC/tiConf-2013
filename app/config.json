@@ -10,6 +10,7 @@
             "data": null
         },
         "baseUrl": "http://50.56.211.225:5000/",
+        "twitterStreamUrl": "http://search.twitter.com/search.json?q=tiConf&rpp=5&include_entities=true&with_twitter_user_id=true&result_type=mixed",
         "refreshRoars": null,
         "refreshProfileRoars": null,
         "currentWin": null,

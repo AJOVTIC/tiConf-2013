@@ -1,16 +1,29 @@
 var ui = require('ui'),
-	Status = require('Status');
+	// Status = require('Status');
+	Stream = require('Stream');
 	
 $.loading = Alloy.createController('loading');
-$.index.add($.loading.getView());
+// $.index.add($.loading.getView());
+
+/*function createRow(data) {
+
+	if (!data) {
+		return;
+	}
+
+    var row = Alloy.createController('stream_row', data);
+
+
+    return row.getView();
+}*/
 
 function loadRows() {
-	if (OS_ANDROID) {
+	/*if (OS_ANDROID) {
 		$.table.setData([
 			{title:L('loadingLatest'), color:'#000'}
 		]);
-	}
-	Status.query(function(e) {
+	}*/
+	/*Status.query(function(e) {
 		$.loading.stop();
 		$.index.remove($.loading.getView());
 		if (e.success) {
@@ -25,8 +38,19 @@ function loadRows() {
 		else {
 			ui.alert('networkGenericErrorTitle', 'activityStreamError');
 		}
-	},30);
+	},30);*/
+
+	Stream.get(function(data) {
+		// alert(data);
+		$.loading.stop();
+		$.index.remove($.loading.getView());
+	});
 }
+
+/*Stream.get(function(data) {
+	$.loading.stop();
+	$.index.remove($.loading.getView());
+});*/
 
 function startRefresh() {
 	$.index.add($.loading.getView());
@@ -35,7 +59,7 @@ function startRefresh() {
 }
 
 //Listen for status update, and refresh.
-Ti.App.addEventListener('app:status.update', startRefresh);
+// Ti.App.addEventListener('app:status.update', startRefresh);
 
 //Fire manually when this view receives "focus"
 $.on('focus', startRefresh);
@@ -44,7 +68,7 @@ $.on('focus', startRefresh);
 $.refresh.on('click', startRefresh);
 
 //Show a detail view for rows with an image
-$.table.on('click', function(e) {
+/*$.table.on('click', function(e) {
 	var statusObject;
 	
 	if (OS_IOS) {
@@ -130,4 +154,4 @@ $.table.on('click', function(e) {
 			}).show();
 		}
 	}
-});
+});*/

@@ -1,0 +1,7 @@
+<Alloy>
+	<TableViewRow id="row">
+		<Label id="screen_name" />
+		<Label id="profile_image_url" />
+		<Label id="text" />
+	</TableViewRow>
+</Alloy>

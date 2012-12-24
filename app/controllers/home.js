@@ -1,7 +1,7 @@
 var ui = require('ui'),
 	moment = require('moment'),
-	Status = require('Status'),
-	Session = require('Session');
+	Status = require('Status');
+	// Session = require('Session');
 
 
 $.lblEventBrite.on('click', function(){

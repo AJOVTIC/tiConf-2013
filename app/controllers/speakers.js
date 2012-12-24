@@ -32,12 +32,14 @@ Speakers.get(function(data) {
 // refactor to Alloy MVC style
 function showPopup(data) {
 
-    var window = Ti.UI.createWindow({
+    // alert(data);
+
+    var win = Ti.UI.createWindow({
         backgroundColor: "transparent",
         zIndex: 1000
     });
 
-    Ti.Android || (window.opacity = 0, window.transform = Ti.UI.create2DMatrix().scale(0));
+    // Ti.Android || (win.opacity = 0, win.transform = Ti.UI.create2DMatrix().scale(0));
 
     var view = Ti.UI.createView({
         top: 10,
@@ -70,13 +72,13 @@ function showPopup(data) {
     });
 
     closeLabel.addEventListener("click", function() {
-    	window.close();
+    	win.close();
     });
 
-    window.open();
+    win.open();
     var offset = 0;
     
-    Ti.Android && (offset = "10dp");
+    // Ti.Android && (offset = "10dp");
 
     var loadingContainer = Ti.UI.createScrollView({
         top: offset,
@@ -91,7 +93,7 @@ function showPopup(data) {
     loadingView.show();*/
 
     var title = Ti.UI.createLabel({
-    	text: data.title,
+    	text: data.name,
     	top: 40,
     	right: 10,
     	font: {
@@ -101,7 +103,7 @@ function showPopup(data) {
     });
 
 	var subtitle = Ti.UI.createLabel({
-    	text: data.subtitle,
+    	text: data.byline,
     	top: 60,
     	right: 10,
     	width: '45%',
@@ -112,7 +114,7 @@ function showPopup(data) {
     });
 
 	var description = Ti.UI.createLabel({
-    	text: data.description,
+    	text: data.biography,
     	top: 180,
     	right: 10,
     	width: '90%',
@@ -122,7 +124,7 @@ function showPopup(data) {
     });
 
     var image = Ti.UI.createImageView({
-    	image: data.image,
+    	image: data.photo ? data.photo.url : '',
     	top: 20,
     	left: 10,
     	width: 135,
@@ -134,8 +136,8 @@ function showPopup(data) {
     view.add(image);
     view.add(description);
 
-    window.add(view),
-    window.add(closeLabel);
+    win.add(view),
+    win.add(closeLabel);
     
     if (!Ti.Android) {
         var tooBig = Ti.UI.createAnimation({
@@ -147,8 +149,8 @@ function showPopup(data) {
             duration: 400
         });
         tooBig.addEventListener("complete", function() {
-            window.animate(shrinkBack);
-        }), window.animate(tooBig);
+            win.animate(shrinkBack);
+        }), win.animate(tooBig);
     }
 }
 
