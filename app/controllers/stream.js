@@ -1,11 +1,8 @@
-var ui = require('ui'),
-	// Status = require('Status');
-	Stream = require('Stream');
-	
-$.loading = Alloy.createController('loading');
-// $.index.add($.loading.getView());
+var Stream = require('twitter_stream');
 
-/*function createRow(data) {
+$.loading = Alloy.createController('loading');
+
+function createRow(data) {
 
 	if (!data) {
 		return;
@@ -15,143 +12,79 @@ $.loading = Alloy.createController('loading');
 
 
     return row.getView();
-}*/
-
-function loadRows() {
-	/*if (OS_ANDROID) {
-		$.table.setData([
-			{title:L('loadingLatest'), color:'#000'}
-		]);
-	}*/
-	/*Status.query(function(e) {
-		$.loading.stop();
-		$.index.remove($.loading.getView());
-		if (e.success) {
-			var td = [];
-			for (var i = 0, l = e.statuses.length; i<l; i++) {
-				var status = e.statuses[i];
-				if (status.photo && !status.photo.processed) continue;
-				td.push(new ui.StatusRow(status));
-			}
-			$.table.setData(td);
-		}
-		else {
-			ui.alert('networkGenericErrorTitle', 'activityStreamError');
-		}
-	},30);*/
-
-	Stream.get(function(data) {
-		// alert(data);
-		$.loading.stop();
-		$.index.remove($.loading.getView());
-	});
 }
 
-/*Stream.get(function(data) {
-	$.loading.stop();
-	$.index.remove($.loading.getView());
-});*/
+function createRows(results, showMoreRow) {
+	
+	var rows = [];
 
-function startRefresh() {
+	if (!results) {
+		return rows;
+	}
+	
+	for (var i = 0; i < results.length; ++i) {
+		rows[i] = createRow(results[i]);
+	}
+	if (showMoreRow) {
+		rows[i] = createMoreRow();
+	}
+	
+	return rows;
+}
+
+function createMoreRow() {
+	return Ti.UI.createTableViewRow({ title: 'Load more ...', height: 75, _isLoadMore: true });
+}
+
+function showActivityIndicator() {
 	$.index.add($.loading.getView());
 	$.loading.start();
-	loadRows();
 }
 
-//Listen for status update, and refresh.
-// Ti.App.addEventListener('app:status.update', startRefresh);
+function hideActivityIndicator() {
+	$.loading.stop();
+	$.index.remove($.loading.getView());
+}
 
-//Fire manually when this view receives "focus"
-$.on('focus', startRefresh);
+function fetchTwitterStream(refreshOrAppend) {
 
-//Refresh when requested
-$.refresh.on('click', startRefresh);
+	showActivityIndicator();
 
-//Show a detail view for rows with an image
-/*$.table.on('click', function(e) {
-	var statusObject;
-	
-	if (OS_IOS) {
-		statusObject = e.rowData.statusObject;
+	if (refreshOrAppend) {
+
+		Stream.fetch(function(data) {
+			if (data && data.results) {
+				$.table.setData(createRows(data.results, !!Stream.next_page));
+			}
+			hideActivityIndicator();
+		}, hideActivityIndicator);
 	}
 	else {
-		//On android we have no row data, so we have to dig for it a bit - holy crap is this ridiculous, we'll fix this
-		if (e.source.statusObject) {
-			statusObject = e.source.statusObject;
-		}
-		else if (e.source.parent.statusObject) {
-			statusObject = e.source.parent.statusObject;
-		}
-		else if (e.source.parent.parent && e.source.parent.parent.statusObject) {
-			statusObject = e.source.parent.parent.statusObject;
-		}
-		else if (e.source.parent.parent.parent && e.source.parent.parent.parent.statusObject) {
-			statusObject = e.source.parent.parent.parent.statusObject;
-		}
+
+		$.table.deleteRow($.table.data[0].rows.length - 1);
+
+		Stream.next(function(data) {
+			if (data && data.results) {
+				$.table.appendRow(createRows(data.results, !!Stream.next_page));
+			}
+			hideActivityIndicator();
+		}, hideActivityIndicator);
+		
 	}
-	
-	if (statusObject.photo) {
-		var w = Ti.UI.createView({
-			top:'5dp',
-			left:'5dp',
-			right:'5dp',
-			bottom:'5dp'
-		});
-		
-		var close = Ti.UI.createImageView({
-			image:'/img/post/close.png',
-			top:0,
-			left:0,
-			zIndex:999
-		});
-		w.add(close);
-		
-		var container = Ti.UI.createView({
-			backgroundColor:'#000',
-			top:'10dp',
-			left:'10dp',
-			right:'10dp',
-			bottom:'10dp'
-		});
-		w.add(container);
-		
-		if (OS_IOS) {
-			var scroll = Ti.UI.createScrollView({
-				contentHeight:'auto',
-				contentWidth:'auto',
-				maxZoomScale:5,
-				minZoomScale:0.75
-			});
-			scroll.add(Ti.UI.createImageView({
-				image:statusObject.photo.urls.medium_640
-			}));
-			container.add(scroll);
-		}
-		else {
-			var web = Ti.UI.createWebView({
-				backgroundColor:'#000',
-				html:'<html style="width:1024px;height:1024px;"><body style="background-color:#000;width:1024px;;height:1024px;"><img src="'+ statusObject.photo.urls.medium_640 +'"/></body></html>',
-				scalesPageToFit:true
-			});
-			container.add(web);
-		}
-		
-		$.index.parent.parent.add(w);
-		
-		close.addEventListener('click', function() {
-			$.index.parent.parent.remove(w);
-			//force GC on constituent elements
-			w = null;
-			container = null;
-			web = null;
-			close = null;
-		});
-		
-		if (OS_ANDROID) {
-			Ti.UI.createNotification({
-				message:L('pinch'),
-				duration:Ti.UI.NOTIFICATION_DURATION_LONG
-			}).show();
-		}
+}
+
+$.table.on('click', function(e) {
+	if (e.row._isLoadMore) {
+		fetchTwitterStream(false);
 	}
-});*/
+});
+
+$.on('focus', function() {
+	$.table.scrollToTop(0);
+	fetchTwitterStream(true);
+});
+
+$.refresh.on('click', function() {
+	$.table.scrollToTop(0);
+	fetchTwitterStream(true);
+});

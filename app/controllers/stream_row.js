@@ -1,7 +1,7 @@
 var args = arguments[0] || {};
 
-$.screen_name.text = args.screen_name;
-$.profile_image_url.text = args.profile_image_url;
+$.from_user.text = args.from_user;
+$.profile_image_url.image = args.profile_image_url;
 $.text.text = args.text;
 
 $.getView()._data = args;
