@@ -5,7 +5,7 @@
 				<ImageView id="backImage"/>
 			</View>
 			
-			<ImageView id="logo"/>
+			<Label id="logo" textid="title"/>
 			<View id="underline"/>
 		</View>
 		

@@ -2,8 +2,6 @@
 	<View id="postContainer" class="appContent">
 		<TextArea id="post"/>
 		
-		<View id="twitter"/>
-		<View id="facebook"/>
 		<View id="camera">
 			<ImageView id="camicon"/>
 		</View>

@@ -29,14 +29,6 @@
     autocorrect: true
 },
 
-'#twitter': {
-	bottom:'10dp',
-	left:'5dp',
-	backgroundImage:'/img/post/btn-twitter-off.png',
-	height:'30dp',
-	width:'30dp'
-},
-
 '#characters': {
 	bottom:'10dp',
 	right:'75dp',
@@ -49,16 +41,8 @@
 	visible:false
 },
 
-'#facebook': {
-	bottom:'10dp',
-	left:'45dp',
-	backgroundImage:'/img/post/btn-facebook-off.png',
-	height:'30dp',
-	width:'30dp'
-},
-
 '#camera': {
-	bottom:'55dp',
+	bottom:'10dp',
 	left:'5dp',
 	height:'30dp',
 	width:'30dp'

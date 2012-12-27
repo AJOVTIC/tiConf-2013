@@ -98,58 +98,6 @@ $.deleteButton.on('click', function() {
 	});
 });
 
-//Manage social connection state
-var fbOn = false;
-$.facebook.on('click', function() {
-	if (!fbOn) {
-		function setOn() {
-			fbOn = true;
-			$.facebook.backgroundImage = '/img/post/btn-facebook-on.png';
-		}
-		
-		if (User.confirmLogin.toFacebook()) {
-			setOn();
-		}
-		else {
-			User.linkToFacebook(function(e) {
-				setOn();
-			});
-		}
-	}
-	else {
-		fbOn = false;
-		$.facebook.backgroundImage = '/img/post/btn-facebook-off.png';
-	}
-});
-
-var twitterOn = false;
-$.twitter.on('click', function() {
-	if (!twitterOn) {
-		function setOn() {
-			twitterOn = true;
-			$.twitter.backgroundImage = '/img/post/btn-twitter-on.png';
-			updateCount();
-			$.characters.visible = true;
-		}
-		
-		if (User.confirmLogin.toTwitter()) {
-			setOn();
-		}
-		else {
-			User.linkToTwitter(function(e) {
-				setOn();
-			});
-		}
-	}
-	else {
-		twitterOn = false;
-		$.characters.visible = true;
-		$.twitter.backgroundImage = '/img/post/btn-twitter-off.png';
-		updateCount();
-		$.characters.visible = false;
-	}
-});
-
 //Track character count
 var count = 140;
 function updateCount() {
@@ -175,12 +123,12 @@ $.submit.on('click', function() {
 		$.postContainer.add($.loading.getView());
 		$.loading.start();
 		Status.create({
-			message:(currentPost === '') ? 'Just uploaded from @codestrong 2012!' : currentPost, //empty string - status update tangram requires a message
+			message:(currentPost === '') ? 'Just uploaded from @ticonf 2013!' : currentPost, //empty string - status update tangram requires a message
 			photo:currentBlob
 		}, function(e) {
 			if (e.success) {				
 				//Cool, it's in ACS, now ship it to any social channels
-				if (twitterOn || fbOn) {
+				/*if (twitterOn || fbOn) {
 					var args = {
 						success: function(ev) {
 							$.loading.stop();
@@ -244,7 +192,7 @@ $.submit.on('click', function() {
 					Ti.App.fireEvent('app:status.update', {
 						withPhoto:(currentBlob) ? true : false //don't want to pass a reference to the blob
 					});
-				}
+				}*/
 			}
 			else {
 				$.loading.stop();
@@ -257,7 +205,7 @@ $.submit.on('click', function() {
 });
 
 //Reset UI for next post
-$.reset = function() {
+/*$.reset = function() {
 	//reset social
 	fbOn = false;
 	$.facebook.backgroundImage = '/img/post/btn-facebook-off.png';
@@ -276,5 +224,5 @@ $.reset = function() {
 	$.imagePreview.opacity = 0;
 	$.preview.image = '';
 	$.camera.opacity = 1;
-};
+};*/
 
