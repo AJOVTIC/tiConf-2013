@@ -10,11 +10,10 @@ function createRow(data) {
 
     var row = Alloy.createController('stream_row', data);
 
-
     return row.getView();
 }
 
-function createRows(results, showMoreRow) {
+function createRows(results, toCreateMoreRow) {
 	
 	var rows = [];
 
@@ -25,7 +24,7 @@ function createRows(results, showMoreRow) {
 	for (var i = 0; i < results.length; ++i) {
 		rows[i] = createRow(results[i]);
 	}
-	if (showMoreRow) {
+	if (toCreateMoreRow) {
 		rows[i] = createMoreRow();
 	}
 	
@@ -33,7 +32,7 @@ function createRows(results, showMoreRow) {
 }
 
 function createMoreRow() {
-	return Ti.UI.createTableViewRow({ title: 'Load more ...', height: 75, _isLoadMore: true });
+	return Ti.UI.createTableViewRow({ title: 'Load more ...', height: 75, _isLoadMore: true, font: { fontSize: 14 } });
 }
 
 function showActivityIndicator() {
@@ -52,25 +51,40 @@ function fetchTwitterStream(refreshOrAppend) {
 
 	if (refreshOrAppend) {
 
-		Stream.fetch(function(data) {
-			if (data && data.results) {
-				$.table.setData(createRows(data.results, !!Stream.next_page));
-			}
-			hideActivityIndicator();
-		}, hideActivityIndicator);
+		if ($.table.data && $.table.data[0] && $.table.data[0].rows.length > 0) {
+			Stream.refresh(function(data) {
+				if (data && data.results && data.results.length > 0) {
+					var rows = createRows(data.results, false);
+					for (var i = 0; i < rows.length; ++i) {
+						$.table.insertRowBefore(0, rows[i]);	
+					}
+				}
+				hideActivityIndicator();
+			}, hideActivityIndicator);
+		}
+		else {
+			Stream.fetch(function(data) {
+				if (data && data.results && data.results.length > 0) {
+					$.table.setData(createRows(data.results, !!Stream.next_page));
+				}
+				hideActivityIndicator();
+			}, hideActivityIndicator);
+		}
+		
 	}
 	else {
 
 		$.table.deleteRow($.table.data[0].rows.length - 1);
 
 		Stream.next(function(data) {
-			if (data && data.results) {
+			if (data && data.results && data.results.length > 0) {
 				$.table.appendRow(createRows(data.results, !!Stream.next_page));
 			}
 			hideActivityIndicator();
 		}, hideActivityIndicator);
 		
 	}
+
 }
 
 $.table.on('click', function(e) {
