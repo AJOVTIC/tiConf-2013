@@ -3,8 +3,8 @@ var User = require('User'),
 	ui = require('ui');
 
 //App configuration
-Ti.Facebook.appid = Ti.App.Properties.getString('ti.facebook.appid');
-Ti.Facebook.permissions = ['publish_stream'];
+// Ti.Facebook.appid = Ti.App.Properties.getString('ti.facebook.appid');
+// Ti.Facebook.permissions = ['publish_stream'];
 	
 //TODO: Be more tolerant of offline
 if (!Ti.Network.online) {

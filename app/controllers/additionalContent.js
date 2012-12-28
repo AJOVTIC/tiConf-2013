@@ -122,6 +122,8 @@ if (!Alloy.isTablet) {
 				width: '85%'
 			}));
 		}
+
+		popup.getView().open();
 		
 	});
 
