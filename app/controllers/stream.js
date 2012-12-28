@@ -1,4 +1,4 @@
-var Stream = require('twitter_stream');
+var Stream = require('TwitterStream');
 
 $.loading = Alloy.createController('loading');
 
@@ -8,7 +8,7 @@ function createRow(data) {
 		return;
 	}
 
-    var row = Alloy.createController('stream_row', data);
+    var row = Alloy.createController('streamRow', data);
 
     return row.getView();
 }

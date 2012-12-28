@@ -7,7 +7,7 @@ function createRow(data) {
 		return;
 	}
 
-    var row = Alloy.createController('speakers_row', data);
+    var row = Alloy.createController('speakersRow', data);
 
 
     return row.getView();

@@ -20,7 +20,7 @@ Agenda.get(function(data) {
 	for (var i = 0; i < data.length; i++) {
 		var session = data[i],
 			// sessionStart = session.time,
-			row = Alloy.createController('agenda_row', session).getView();
+			row = Alloy.createController('agendaRow', session).getView();
 			
 		if (session.day.toLowerCase() == days[0]) {
 			dayOne.push(row);

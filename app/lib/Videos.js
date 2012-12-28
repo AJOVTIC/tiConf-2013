@@ -1,4 +1,4 @@
-var Videos = [
+/*var Videos = [
 	{
 		title: 'Videos 1',
 		author: 'Author 1',
@@ -14,6 +14,10 @@ var Videos = [
 		author: 'Author 3',
 		video: 'http://vimeo.com/35841568'
 	}
-];
+];*/
+
+var Dpd = require('Dpd');
+
+var Videos = new Dpd(Alloy.CFG.baseUrl + 'videos/');
 
 module.exports = Videos;

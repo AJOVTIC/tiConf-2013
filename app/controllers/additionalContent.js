@@ -68,63 +68,77 @@ if (!Alloy.isTablet) {
 
 	$.contentTypes.add($.headerView);
 
-	var selection = SLIDES;
+	var SlidesDpd = require('Slides');
+	var VideosDpd = require('Videos');
 
-	$.headerView.on('change', function(e) {
-		// alert(e.selection);
-		selection = e.selection;
-		if (selection == SLIDES) {
-			$.presentation.setData(createRows(Slides));
-		}
-		else {
-			$.presentation.setData(createRows(Videos));
-		}
-	});
+	SlidesDpd.get(function(data) {
+		
+		var Slides, Videos;
+		Slides = data;
+		
+		$.presentation.setData(createRows(data));
+		
+		VideosDpd.get(function(vdata) {
+			Videos = vdata;
 
-	var Slides = require('Slides');
-	var Videos = require('Videos');
+			var selection = SLIDES;
 
-	$.presentation.setData(createRows(Slides));
-
-	$.presentation.on('click', function(e) {
-
-		var popup = Alloy.createController('popup');
-
-		var aData;
-
-		if (selection == SLIDES) {
-			aData = e.row._data.slides;
-			var views = [], v, im;
-			for (var i = 0; i < aData.length; ++i) {
-				
-				v = Ti.UI.createView();
-
-				im = Ti.UI.createImageView({
-					image: aData[i]
-				});
-				v.add(im);
-				views[i] = v;
-			}
-
-			var scrollableView = Ti.UI.createScrollableView({
-				views: views,
-				height: '85%',
-				width: '85%'
+			$.headerView.on('change', function(e) {
+				selection = e.selection;
+				if (selection == SLIDES) {
+					$.presentation.setData(createRows(Slides));
+				}
+				else {
+					$.presentation.setData(createRows(Videos));
+				}
 			});
 
-			popup.getView().add(scrollableView);
-		}
-		else {
-			aData = e.row._data.video;
-			popup.getView().add(Ti.UI.createWebView({
-				url: aData,
-				height: '85%',
-				width: '85%'
-			}));
-		}
+			$.presentation.on('click', function(e) {
 
-		popup.getView().open();
-		
+				// var popup = Alloy.createController('popup');
+
+				var aData;
+
+				if (selection == SLIDES) {
+					aData = e.row._data;
+					/*var views = [], v, im;
+					for (var i = 0; i < aData.length; ++i) {
+						
+						v = Ti.UI.createView();
+
+						im = Ti.UI.createImageView({
+							image: aData[i]
+						});
+						v.add(im);
+						views[i] = v;
+					}
+
+					var scrollableView = Ti.UI.createScrollableView({
+						views: views,
+						height: '85%',
+						width: '85%'
+					});
+
+					popup.getView().add(scrollableView);*/
+				}
+				else {
+					aData = e.row._data;
+					/*popup.getView().add(Ti.UI.createWebView({
+						url: aData,
+						height: '85%',
+						width: '85%'
+					}));*/
+				}
+
+				// popup.getView().open();
+
+				Ti.Platform.openURL(aData.url);
+				
+			});
+			
+		});
+
 	});
+
 
 }
