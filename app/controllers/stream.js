@@ -91,6 +91,9 @@ $.table.on('click', function(e) {
 	if (e.row._isLoadMore) {
 		fetchTwitterStream(false);
 	}
+	else {
+		Ti.Platform.openURL(e.row._data.url);
+	}
 });
 
 $.on('focus', function() {
