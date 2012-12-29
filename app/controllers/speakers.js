@@ -1,6 +1,11 @@
 
 var Speakers = require('Speakers');
 
+$.loading = Alloy.createController('loading');
+
+$.content.add($.loading.getView());
+$.loading.start();
+
 function createRow(data) {
 
 	if (!data) {
@@ -22,6 +27,9 @@ Speakers.get(function(data) {
     }
 
     $.speakersTableView.setData(rows);
+
+    $.content.remove($.loading.getView());
+    $.loading.stop();
 });
 
 
