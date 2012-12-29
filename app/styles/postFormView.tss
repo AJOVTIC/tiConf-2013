@@ -38,6 +38,8 @@
 	font:{
 		fontSize:'10dp'
 	},
+	zIndex: 10,
+	text: '140',
 	visible:false
 },
 

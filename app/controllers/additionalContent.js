@@ -3,44 +3,19 @@ var ui = require('ui');
 var SLIDES = 'SLIDES';
 var VIDEOS = 'VIDEOS';
 
+$.loading = Alloy.createController('loading');
+$.content.add($.loading.getView());
+$.loading.start();
+
 function createRow(data) {
 	if (!data) {
+		Ti.API.warm('Additional content row data is undefined!');
 		return;
 	}
 
-	var row = Ti.UI.createTableViewRow({
-		height: 100,
-		selectedBackgroundColor:'#9a9a9a',
-		className:'Row'
-	});
+	var row = Alloy.createController('additionalContentRow', data);
 
-	var title = Ti.UI.createLabel({
-		text: data.title,
-		left: 20,
-		top: 20,
-		color: "#0574bf",
-		font: {
-			fontSize: 18,
-			fontWeight: 'bold'
-		}
-	});
-
-	var author = Ti.UI.createLabel({
-		text: data.author,
-		left: 20,
-		top: 50,
-		color: "#0574bf",
-		font: {
-			fontSize: 16
-		}
-	});
-
-	row.add(title);
-	row.add(author);
-
-	row._data = data;
-
-	return row;
+	return row.getView();
 }
 
 
@@ -95,50 +70,23 @@ if (!Alloy.isTablet) {
 
 			$.presentation.on('click', function(e) {
 
-				// var popup = Alloy.createController('popup');
-
 				var aData;
 
 				if (selection == SLIDES) {
 					aData = e.row._data;
-					/*var views = [], v, im;
-					for (var i = 0; i < aData.length; ++i) {
-						
-						v = Ti.UI.createView();
-
-						im = Ti.UI.createImageView({
-							image: aData[i]
-						});
-						v.add(im);
-						views[i] = v;
-					}
-
-					var scrollableView = Ti.UI.createScrollableView({
-						views: views,
-						height: '85%',
-						width: '85%'
-					});
-
-					popup.getView().add(scrollableView);*/
 				}
 				else {
 					aData = e.row._data;
-					/*popup.getView().add(Ti.UI.createWebView({
-						url: aData,
-						height: '85%',
-						width: '85%'
-					}));*/
 				}
-
-				// popup.getView().open();
 
 				Ti.Platform.openURL(aData.url);
 				
 			});
+
+			$.content.remove($.loading.getView());
+			$.loading.stop();
 			
 		});
 
 	});
-
-
 }

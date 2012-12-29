@@ -1,5 +1,5 @@
 <Alloy>
-	<View class="container">
+	<View id="content" class="container">
 		<View id="headerViewContainer" class="contentHeader">
 			<Label class="contentHeaderLabel" textid="additionalContent"/>
 			<View class="fauxShadow"/>
