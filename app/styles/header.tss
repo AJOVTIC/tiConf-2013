@@ -38,9 +38,9 @@
 
 '#profileImage': {
 	right:0,
-	image:'/img/header/btn-profile.png',
-	width:'27dp',
-	height:'22dp',
+	image:'/ticket.png',
+	width:'32dp',
+	height:'32dp',
 	opacity:1
 },
 

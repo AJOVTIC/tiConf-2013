@@ -108,14 +108,7 @@ Ti.App.addEventListener('app:close.drawer', function(e) {
 });
 
 function doProfile() {
-	if ($.profile.enabled) {
-		Ti.App.fireEvent('app:open.drawer', {
-			controller:'profile'
-		});
-		$.profile.enabled = false;
-		$.profile.visible = false;
-		
-	}
+	Ti.Platform.openURL('http://ticonf-2013.eventbrite.com/');
 }
 $.profile.on('click', doProfile);
 
