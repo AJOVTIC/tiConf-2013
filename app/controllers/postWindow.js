@@ -13,10 +13,10 @@ if (OS_IOS) {
 	function handleKeyboard(e) {
 		if (focused) {
 			if (Ti.Gesture.orientation === Ti.UI.LANDSCAPE_LEFT || Ti.Gesture.orientation === Ti.UI.LANDSCAPE_RIGHT) {
-				postContainer.bottom = e.keyboardFrame.height+'dp';
+				postContainer.bottom = e.keyboardFrame.height;
 			}
 			else {
-				postContainer.bottom = (e.keyboardFrame.height+5)+'dp';
+				postContainer.bottom = (e.keyboardFrame.height + 5);
 			}
 		}
 	}

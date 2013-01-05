@@ -1,80 +1,85 @@
-//Dependencies
-var User = require('User'),
-	ui = require('ui');
-
-//App configuration
-// Ti.Facebook.appid = Ti.App.Properties.getString('ti.facebook.appid');
-// Ti.Facebook.permissions = ['publish_stream'];
-	
 //TODO: Be more tolerant of offline
 if (!Ti.Network.online) {
-	ui.alert('networkErrTitle', 'networkErrMsg');
+	alert(L('networkErrMsg'));
 }
 
-//create view hierarchy components
-$.login = Alloy.createController('login');
 
-//Check Login Status
-if (User.confirmLogin()) {
+
+function openMain() {
 	$.main = Alloy.createController('main');
 	$.clouds && ($.index.remove($.clouds));
 	$.index.backgroundImage = '/img/general/bg-interior.png';
 	$.index.add($.main.getView());
 	$.main.init();
 }
+
+// Ti.App.Properties.setBool('offerRegistration', true);
+
+var offerRegistration = Ti.App.Properties.getBool('offerRegistration', true);
+
+if (offerRegistration) {
+	$.register = Alloy.createController('register');
+	$.index.add($.register.getView());
+	$.register.skip.on('click', function() {
+
+		var dialog = Ti.UI.createAlertDialog({
+			title: 'Are you sure?',
+			buttonNames: [ 'Yes', 'No' ],
+			cancel: 1
+		});
+
+		dialog.addEventListener('click', function(e) {
+			if (e.index == 0) {
+				
+				Ti.App.Properties.setBool('offerRegistration', false);
+
+				$.index.remove($.register.getView());
+				
+				openMain();
+			}
+		});
+
+		dialog.show();
+	});
+
+	$.register.register.on('click', function() {
+
+		var firstName = $.register.firstName.value;
+		var lastName = $.register.lastName.value;
+		var email = $.register.email.value;
+
+		Ti.API.info(firstName);
+		Ti.API.info(lastName);
+		Ti.API.info(email);
+
+		var RegisterDpd = require('Register');
+
+		RegisterDpd.post({
+			name: firstName + ' ' + lastName,
+			email: email
+		}, function() {
+
+			$.index.remove($.register.getView());
+			openMain();
+
+			Ti.App.Properties.setBool('offerRegistration', false);
+			if (OS_IOS) {
+				alert('Thanks for registration!');
+			}
+			else {
+
+				var toast = Ti.UI.createNotification({
+			    	message: 'Thanks for registration!',
+			    	duration: Ti.UI.NOTIFICATION_DURATION_LONG
+				});
+
+				toast.show();
+			}
+		})
+	});		
+}
 else {
-	$.index.backgroundImage = '/img/general/bg-cloud.png';
-	$.index.add($.login.getView());
-	$.login.init();
-}
-
-//Monitor Login Status
-$.login.on('loginSuccess', function(e) {
-	$.main = Alloy.createController('main');
-	$.clouds && ($.index.remove($.clouds));
-	$.index.backgroundImage = '/img/general/bg-interior.png';
-	$.index.add($.main.getView());
-	ui.zoom($.login.getView(), function() {
-		ui.unzoom($.main.getView(), function() {
-			$.main.init();
-		});
-	});
-});
-
-//Look for global logout event
-Ti.App.addEventListener('app:logout', function(e) {
-	$.clouds && ($.index.add($.clouds));
-	$.index.backgroundImage = '/img/general/bg-cloud.png';
-	$.index.add($.login.getView());
-	$.login.init();
-	ui.zoom($.main.getView(), function() {
-		ui.unzoom($.login.getView());
-	});
-});
-
-//Lock orientation modes for handheld
-if (!Alloy.isTablet) {
-	$.index.orientationModes = [
-		Ti.UI.PORTRAIT,
-		Ti.UI.UPSIDE_PORTRAIT
-	];
-}
-
-//TODO: At some point, a better UX would be to close open drawers until there are none, and then exit
-if (Ti.Platform.osname === 'android') {
-	$.index.addEventListener('android:back', function() {
-		var od = Ti.UI.createOptionDialog({
-			title:L('leave'),
-			options:[L('ok'), L('cancel')],
-			cancel:1
-		});
-		
-		od.addEventListener('click', function(e) {
-			e.index === 0 && ($.index.close());
-		});
-		
-		od.show();
-	});
+	openMain();
 }
 
 //Open initial window

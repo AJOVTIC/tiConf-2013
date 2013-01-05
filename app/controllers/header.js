@@ -1,5 +1,5 @@
 //Tablet header emits navigation events
-if (Alloy.isTablet) {
+/* if (Alloy.isTablet) {
 	var tabOffset = 121,
 		//TODO see how to set this for tablets
 		tabWidth = 50;
@@ -17,10 +17,10 @@ if (Alloy.isTablet) {
 		//Loop through tabs and set active/inactive
 		_.each(['home', 'agenda', 'stream', 'venue', 'about', 'speakers'], function(item) {
 			if (name === item) {
-				$[item+'Icon'].image = '/img/header/btn-tablet-'+item+'-pressed.png'
+				$[item+'Icon'].image = '/img/header/btn-tablet-' + item + '-pressed.png'
 			}
 			else {
-				$[item+'Icon'].image = '/img/header/btn-tablet-'+item+'-default.png'
+				$[item+'Icon'].image = '/img/header/btn-tablet-' + item + '-default.png'
 			}
 		});
 		
@@ -60,7 +60,7 @@ if (Alloy.isTablet) {
 	$.setNav = function(name) {
 		doTab(name,true);
 	};
-}
+}*/
 
 //Public component API
 $.setBackVisible = function(toggle) {

@@ -1,0 +1,40 @@
+'.container': {
+	height: Ti.UI.FILL,
+	width: Ti.UI.FILL
+},
+
+'#content': {
+	layout: 'vertical',
+	top: 200,
+	bottom: 10,
+	width: 250
+},
+
+'#email': {
+	keyboardType:Ti.UI.KEYBOARD_EMAIL
+},
+
+'#buttonContainer': {
+	top: 10,
+	height:Ti.UI.SIZE,
+	width:Ti.UI.FILL
+},
+
+Button: {
+	width: 116,
+	height: 33,
+	backgroundColor: '#999',
+	font: {
+		fontFamily:'Quicksand-Bold',
+		fontSize: 14
+	},
+	style: Ti.UI.iPhone.SystemButtonStyle.PLAIN
+},
+
+'#register': {
+	left: 0
+},
+
+'#skip': {
+	right: 0
+}

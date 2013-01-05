@@ -99,13 +99,22 @@ $.deleteButton.on('click', function() {
 });
 
 //Track character count
-var count = 140;
+var count = 140; //tweet minus hashtag
+var tagCount = 8;
+var hasTagCount = 8;
 function updateCount() {
 	var startNumber = (currentBlob) ? 118 : 140
 	count = startNumber - $.post.value.length;
-	$.characters.color = (count >= 0) ? '#000' : '#ff0000';
-	$.characters.text = count;
+	if (count <= 15) {
+		$.characters.color = (count >= 0) ? '#000' : '#f00';
+		$.characters.text = count;
+	}
+	else {
+		// $.characters.color = '#cdcdcd';
+		$.characters.text = '';
+	}
 }
+
 $.post.on('change', updateCount);
 
 //track social post status, don't be done til these come back

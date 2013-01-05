@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
 	<string name="title">tiConf EU 2013</string>
+	<string name="register">Register</string>
+	<string name="skip">Skip</string>
+	<string name="firstName">First name</string>
+	<string name="lastName">Last name</string>
 	<string name="email">Email</string>
 	<string name="password">Password</string>
 	<string name="authenticating">Authenticating...</string>
@@ -37,6 +41,7 @@
 	<string name="featuredSponsors">FEATURED SPONSORS</string>
 	<string name="sponsorHeader">SPONSORED BY:</string>
 	
+	<string name="hashtag">#tiConf</string>
 	<string name="attachPhoto">Attach A Photo...</string>
 	<string name="camera">From Camera</string>
 	<string name="photoGallery">From Photo Gallery</string>

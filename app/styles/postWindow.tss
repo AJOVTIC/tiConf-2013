@@ -13,7 +13,8 @@ Window: {
 '#logo': {
 	// image:'/img/general/codestrong-bar-logo.png',
 	height:'22dp',
-	width:'81dp'
+	width: Ti.UI.FILL,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 },
 
 '#underline': {
@@ -63,14 +64,6 @@ Window: {
 	bottom:'10dp',
 	left:'5dp',
 	backgroundImage:'/img/post/btn-twitter-off.png',
-	height:'30dp',
-	width:'30dp'
-},
-
-'#facebook': {
-	bottom:'10dp',
-	left:'45dp',
-	backgroundImage:'/img/post/btn-facebook-off.png',
 	height:'30dp',
 	width:'30dp'
 },

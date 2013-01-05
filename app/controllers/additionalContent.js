@@ -4,6 +4,7 @@ var SLIDES = 'SLIDES';
 var VIDEOS = 'VIDEOS';
 
 $.loading = Alloy.createController('loading');
+
 $.content.add($.loading.getView());
 $.loading.start();
 

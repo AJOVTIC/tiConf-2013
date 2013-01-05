@@ -30,17 +30,16 @@
 },
 
 '#characters': {
-	bottom:'10dp',
-	right:'75dp',
-	height:Ti.UI.SIZE,
-	width:Ti.UI.SIZE,
-	color:'#cdcdcd',
+	bottom: '15dp',
+	left: '45%',
+	height: Ti.UI.SIZE,
+	width: Ti.UI.SIZE,
+	// color: '#cdcdcd',
+	color: '#000',
 	font:{
-		fontSize:'10dp'
+		fontSize: 14
 	},
-	zIndex: 10,
-	text: '140',
-	visible:false
+	// visible:false
 },
 
 '#camera': {
