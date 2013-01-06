@@ -10,7 +10,6 @@
 		
 		<View id="tabletDash" formFactor="tablet">
 			<View id="nowContainer">
-				
 				<View id="agendaPeek" class="appContent">
 					<Label id="agendaHeader" class="blueHeader" textid="sunday"/>
 					<TableView id="dailySchedule"/>

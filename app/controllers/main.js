@@ -114,7 +114,7 @@ $.tabs && ($.tabs.on('change', sectionNav));
 $.header.on('change', sectionNav);
 
 //Re-initialize after logout
-Ti.App.addEventListener('app:logout', function() {
+/*Ti.App.addEventListener('app:logout', function() {
 	while (drawers.length > 0) {
 		popDrawer();
 	}
@@ -129,7 +129,7 @@ Ti.App.addEventListener('app:logout', function() {
 		$.tabs && ($.tabs.setTab('home'));
 		Alloy.isTablet && ($.header.setNav('home'));
 	}
-});
+});*/
 
 //Initialize component and UI state
 $.init = function(ready) {

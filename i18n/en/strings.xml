@@ -41,6 +41,10 @@
 	<string name="featuredSponsors">FEATURED SPONSORS</string>
 	<string name="sponsorHeader">SPONSORED BY:</string>
 	
+	<string name="twitter_consumer_key">CrF0Wu2cXiuVDnLAIode8A</string>
+	<string name="twitter_consumer_secret">p2MrfWf2DLa4GRKoDi2Jn0J9bl9GWCB86mHmQdDdig</string>
+	<string name="twitter_callback_url">http://2013.ticonf.eu/</string>
+
 	<string name="hashtag">#tiConf</string>
 	<string name="attachPhoto">Attach A Photo...</string>
 	<string name="camera">From Camera</string>

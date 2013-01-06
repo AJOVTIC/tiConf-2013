@@ -21,13 +21,13 @@
 	height:'2dp'
 },
 
-'#profile': {
+'#eventbrite': {
 	width:'50dp',
 	right:'10dp',
 	enabled:true
 },
 
-'#profile[formFactor=tablet]': {
+'#eventbrite[formFactor=tablet]': {
 	top:'5dp',
 	right:'75dp',
 	width:'48dp',
@@ -36,7 +36,7 @@
 	backgroundSelectedImage:'/img/header/btn-tablet-profile-pressed.png'
 },
 
-'#profileImage': {
+'#eventbriteImage': {
 	right:0,
 	image:'/ticket.png',
 	width:'32dp',

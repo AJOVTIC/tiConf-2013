@@ -1,5 +1,5 @@
 //Tablet header emits navigation events
-/* if (Alloy.isTablet) {
+if (Alloy.isTablet) {
 	var tabOffset = 121,
 		//TODO see how to set this for tablets
 		tabWidth = 50;
@@ -60,10 +60,10 @@
 	$.setNav = function(name) {
 		doTab(name,true);
 	};
-}*/
+}
 
 //Public component API
-$.setBackVisible = function(toggle) {
+/*$.setBackVisible = function(toggle) {
 	if (!Alloy.isTablet) {
 		if (toggle) {
 			$.back.enabled = true;
@@ -78,24 +78,24 @@ $.setBackVisible = function(toggle) {
 			$.profile.enabled = true;
 		}
 	}
-};
+};*/
 
 //Back isn't there on tablet
-if ($.back) {
+/*if ($.back) {
 	$.back.on('click', function() {
 		if ($.back.enabled) {
 			$.trigger('back');
 		}
 	});
-}
+}*/
 
-function profileOn() {
+/*function profileOn() {
 	$.profile.enabled = true;
 	$.profile.visible = true;
-}
+}*/
 
 
-Ti.App.addEventListener('app:close.drawer', function(e) {
+/*Ti.App.addEventListener('app:close.drawer', function(e) {
 	//Right now we only go one level deep with the drawer on handheld
 	if (e.controller === 'profile' || !Alloy.isTablet) {
 		profileOn();
@@ -105,11 +105,12 @@ Ti.App.addEventListener('app:close.drawer', function(e) {
 	else {
 		profileOn();
 	}
-});
+});*/
 
-function doProfile() {
+function openEventbrite() {
 	Ti.Platform.openURL('http://ticonf-2013.eventbrite.com/');
 }
-$.profile.on('click', doProfile);
+
+$.eventbrite.on('click', openEventbrite);
 
 

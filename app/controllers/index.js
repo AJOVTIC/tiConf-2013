@@ -3,7 +3,7 @@ if (!Ti.Network.online) {
 	alert(L('networkErrMsg'));
 }
 
-
+$.loading = Alloy.createController('loading');
 
 function openMain() {
 	$.main = Alloy.createController('main');
@@ -13,7 +13,13 @@ function openMain() {
 	$.main.init();
 }
 
-// Ti.App.Properties.setBool('offerRegistration', true);
+function showLoading() {
+	$.index.add($.loading.getView());
+}
+
+function hideLoading() {
+	$.index.remove($.loading.getView());
+}
 
 var offerRegistration = Ti.App.Properties.getBool('offerRegistration', true);
 
@@ -48,9 +54,13 @@ if (offerRegistration) {
 		var lastName = $.register.lastName.value;
 		var email = $.register.email.value;
 
-		Ti.API.info(firstName);
-		Ti.API.info(lastName);
-		Ti.API.info(email);
+		if (!email) {
+			alert('Email must not be empty!');
+			return;
+		}
+		
+		$.index.remove($.register.getView());
+		showLoading();
 
 		var RegisterDpd = require('Register');
 
@@ -59,10 +69,12 @@ if (offerRegistration) {
 			email: email
 		}, function() {
 
-			$.index.remove($.register.getView());
+			hideLoading();
+
 			openMain();
 
 			Ti.App.Properties.setBool('offerRegistration', false);
+			
 			if (OS_IOS) {
 				alert('Thanks for registration!');
 			}

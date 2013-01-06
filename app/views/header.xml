@@ -26,8 +26,8 @@
 		</View>
 		
 		<!-- user profile for handheld -->
-		<View id="profile" formFactor="handheld">
-			<ImageView id="profileImage"/>
+		<View id="eventbrite">
+			<ImageView id="eventbriteImage"/>
 		</View>
 		
 		<View id="underline"/>

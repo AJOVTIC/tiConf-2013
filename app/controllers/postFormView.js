@@ -3,6 +3,8 @@ var ui = require('ui'),
 	User = require('User'),
 	Cloud = require('ti.cloud'),
 	currentBlob = null;
+
+var Twitter = require('TwitterPost')
 	
 $.loading = Alloy.createController('loading');
 
@@ -99,18 +101,18 @@ $.deleteButton.on('click', function() {
 });
 
 //Track character count
-var count = 140; //tweet minus hashtag
-var tagCount = 8;
-var hasTagCount = 8;
+var tag = ' ' + L('hashtag');
+var tagCount = tag.length;
+var count = 140 - tagCount; //tweet minus hashtag
+var startNumber = count;
+
 function updateCount() {
-	var startNumber = (currentBlob) ? 118 : 140
 	count = startNumber - $.post.value.length;
 	if (count <= 15) {
 		$.characters.color = (count >= 0) ? '#000' : '#f00';
 		$.characters.text = count;
 	}
 	else {
-		// $.characters.color = '#cdcdcd';
 		$.characters.text = '';
 	}
 }
@@ -119,97 +121,38 @@ $.post.on('change', updateCount);
 
 //track social post status, don't be done til these come back
 $.submit.on('click', function() {
-	if ($.post.value || currentBlob) {
+	var val = $.post.value;
+	if (val) {
 		
 		//exit if content is not valid - TODO: put in better validation and feedback
-		if ((twitterOn && currentBlob && $.post.value.length > 118) ||
-			(twitterOn && !currentBlob && $.post.value.length > 140)) {
-			ui.alert('tooLong', 'tooLongMessage');
+		if (count < 0) {
+			alert(L('tooLongMessage'));
 			return;
 		}
 		
-		var currentPost = $.post.value;
-		$.postContainer.add($.loading.getView());
+		var tweet = val + tag;
+
+		Ti.API.info('Tweet: ' + tweet);
+
+		/*$.postContainer.add($.loading.getView());
 		$.loading.start();
-		Status.create({
-			message:(currentPost === '') ? 'Just uploaded from @ticonf 2013!' : currentPost, //empty string - status update tangram requires a message
-			photo:currentBlob
-		}, function(e) {
-			if (e.success) {				
-				//Cool, it's in ACS, now ship it to any social channels
-				/*if (twitterOn || fbOn) {
-					var args = {
-						success: function(ev) {
-							$.loading.stop();
-							$.postContainer.remove($.loading.getView());
-							ui.alert('updateSuccessTitle', 'updateSuccessText');
-							$.trigger('success');
-							Ti.App.fireEvent('app:status.update', {
-								withPhoto:(currentBlob) ? true : false //don't want to pass a reference to the blob
-							});
-						},
-						error: function(ev) {
-							$.loading.stop();
-							$.postContainer.remove($.loading.getView());
-							Ti.API.error('Error on social post: '+ev);
-							ui.alert('updateErrorTitle', 'updateErrorText');
-						}
-					};
-					
-					//Handle twitter posting
-					if (twitterOn) {
-						if (currentBlob) {
-							//For twitter, we need to grab the URL of the original image on ACS
-							//Need to delay in order for ACS to process the images and return us URLs
-							//TODO: Brittle as F - maybe do an interval?
-							setTimeout(function() {
-								Cloud.Statuses.query({
-									limit:1,
-									where:{
-										user_id:e.status.user.id
-									},
-									order:'-created_at'
-								}, function(pe) {
-									if (pe.success) {
-										args.message = currentPost+': '+pe.statuses[0].photo.urls.original
-										User.tweet(args);
-									}
-									else {
-										args.error(pe);
-									}
-								});
-							},5000);
-						}
-						else {
-							args.message = currentPost;
-							User.tweet(args);
-						}
-					}
-					
-					//Handle FB posting
-					if (fbOn) {
-						args.message = currentPost;
-						args.image = currentBlob;
-						User.facebookPost(args);
-					}
-				}
-				else {
-					$.loading.stop();
-					$.postContainer.remove($.loading.getView());
-					ui.alert('updateSuccessTitle', 'updateSuccessText');
-					$.trigger('success');
-					Ti.App.fireEvent('app:status.update', {
-						withPhoto:(currentBlob) ? true : false //don't want to pass a reference to the blob
-					});
-				}*/
-			}
-			else {
+		
+		$.loading.stop();
+		$.postContainer.remove($.loading.getView());
+		Ti.API.error('Error with Twitter post'');*/
+		Twitter.tweet(
+			tweet,
+			function() {
 				$.loading.stop();
 				$.postContainer.remove($.loading.getView());
-				Ti.API.error('Error on ACS post: '+e);
-				ui.alert('updateErrorTitle', 'updateErrorText');
+				alert('Twetted!');
+
+			}, function() {
+				$.loading.stop();
+				$.postContainer.remove($.loading.getView());
+				alert(L('updateErrorText'));
 			}
-		});
+		);
 	}
 });
 
