@@ -1,7 +1,7 @@
 var ui = require('ui'),
-	Status = require('Status'),
-	User = require('User'),
-	Cloud = require('ti.cloud'),
+	// Status = require('Status'),
+	// User = require('User'),
+	// Cloud = require('ti.cloud'),
 	currentBlob = null;
 
 var Twitter = require('TwitterPost')
@@ -59,7 +59,7 @@ $.camera.on('click', function() {
 				});
 			},
 			error: function(e) {
-				ui.alert('mediaErrorTitle', 'mediaErrorText');
+				alert(L('mediaErrorText'));
 			}
 		};
 		
@@ -74,7 +74,7 @@ $.camera.on('click', function() {
 
 	if (OS_IOS) {
 		od.show({
-			view:$.camera
+			view: $.camera
 		});
 	}
 	else {
@@ -134,24 +134,23 @@ $.submit.on('click', function() {
 
 		Ti.API.info('Tweet: ' + tweet);
 
-		/*$.postContainer.add($.loading.getView());
+		$.postContainer.add($.loading.getView());
 		$.loading.start();
-		
-		$.loading.stop();
-		$.postContainer.remove($.loading.getView());
-		Ti.API.error('Error with Twitter post'');*/
+
 		Twitter.tweet(
 			tweet,
-			function() {
+			function(success) {
 				$.loading.stop();
 				$.postContainer.remove($.loading.getView());
-				alert('Twetted!');
-
-			}, function() {
-				$.loading.stop();
-				$.postContainer.remove($.loading.getView());
-				alert(L('updateErrorText'));
-			}
+				if (success) {
+					$.trigger('success');
+					alert('Tweeted succesfully!');
+				}
+				else {
+					alert('Error happend, sorry!');
+				}
+			},
+			currentBlob
 		);
 	}
 });

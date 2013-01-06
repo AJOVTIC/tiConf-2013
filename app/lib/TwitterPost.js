@@ -46,6 +46,7 @@ var TwitterPost = {
 		
 		if(BH.authorized() === false) {
 			BH.authorize(function(resp) {
+				Ti.API.info('resp: ' + resp);
 				if(resp) {
 					obj.tweet(obj.mytweet, callback, optionalImage);
 					return true;
@@ -71,6 +72,8 @@ var TwitterPost = {
 					typeof callback == "function" && callback(true);
 					return true;
 				});
+			}
+			else {
 				BH.sendTwitterImage(
 					{
 						status: text,

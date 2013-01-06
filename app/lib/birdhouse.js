@@ -132,14 +132,14 @@ function BirdHouse(params) {
 	function get_request_verifier(callback) {
 		var url = "http://api.twitter.com/oauth/authorize?oauth_token="+cfg.request_token;
 		var win = Ti.UI.createWindow({
-			top: 5,
+			// top: 5,
             // navBarHidden: true,
 			// fullscreen: true,
 			modal: true,
             // width: 470,
             // height: 310,
             // left: 5 ,
-            borderRadius: 10,
+            // borderRadius: 10,
             backgroundColor: '#000'
 		});
         win.addEventListener('close', function(e){
