@@ -59,7 +59,7 @@ TableView: {
 },
 
 '.blueHeader': {
-	color:'#0574bf',
+	color:'#d8805c',
 	font: {
 		fontFamily:'Quicksand-Bold',
 		fontSize:'18dp'
@@ -97,6 +97,26 @@ TableView: {
 	height:'35dp'
 },
 
+'.contentHeader1': {
+	backgroundColor:'#ffffff',
+	top:'10dp',
+	width: '45%',
+	left:'10dp',
+	right:'10dp',
+	height:'35dp'
+},
+
+
+'.contentHeader2': {
+	backgroundColor:'#ffffff',
+	top:'10dp',
+	right:'10dp',
+	width: '45%',
+	right:'10dp',
+	height:'35dp'
+},
+
+
 '.contentHeaderLabel': {
 	color:'#373e47',
 	left:'10dp',
@@ -106,5 +126,30 @@ TableView: {
 		fontFamily:'Quicksand-Bold',
 		fontSize:'14dp'
 	}
+},
+
+'.contentHeaderLabel1': {
+	color:'#373e47',
+	left:'10dp',
+	width: '98%',
+	height:Ti.UI.SIZE,
+	font: {
+		fontFamily:'Quicksand-Bold',
+		fontSize:'14dp'
+	}
+},
+
+'.contentHeaderLabel2': {
+	color:'#373e47',
+	right: '10dp',
+	width: '98%',
+	height:Ti.UI.SIZE,
+	font: {
+		fontFamily:'Quicksand-Bold',
+		fontSize:'14dp'
+	},
+	textAlign: 'right'
 }
+
+
 

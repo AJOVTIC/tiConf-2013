@@ -2,7 +2,6 @@
 	<View id="index" class="container">
 		<ImageView id="logo" />
 		<View id="content">
-			<Label id="message" text="Register for tiConf updates" />
 			<View id="firstNameWrapper" class="tfWrapper">
 				<TextField id="firstName" />
 			</View>

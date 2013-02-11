@@ -20,7 +20,7 @@ Ti.App.addEventListener('app:open.drawer', function(e) {
 	//Tablet manages this manually
 	if (!Alloy.isTablet) {
 		//add to the count managed by the header
-		$.header.setBackVisible(true);
+		//$.header.setBackVisible(true);
 	}
 	
 	//Open a new drawer, containing the given view controller
@@ -38,7 +38,7 @@ function popDrawer() {
 	d.closeDrawer(function() {
 		$.container.remove(d.getView());
 	});
-	$.header.setBackVisible(drawers.length > 0);
+	//$.header.setBackVisible(drawers.length > 0);
 }
 
 $.header.on('back', popDrawer);

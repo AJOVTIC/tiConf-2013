@@ -63,6 +63,7 @@
 	
 	<string name="venue">VENUE</string>
 	<string name="speakers">SPEAKERS</string>
+	<string name="slides">SLIDES &amp; VIDEOS</string>
 	<string name="additionalContent">ADDITIONAL CONTENT</string>
 	<string name="additionalContentSlides">SLIDES</string>
 	<string name="additionalContentVideo">VIDEO</string>
@@ -74,7 +75,7 @@
 	<string name="disconnectTwitter">Disconnect from Twitter</string>
 	<string name="disconnectFacebook">Disconnect from Facebook</string>
 	
-	<string name="working">COLLECTING DATA IN DIGITAL RAIN BARRELS...</string>
+	<string name="working">SEARCHING THE INTERWEBZ</string>
 	<string name="loadingLatest">LOADING LATEST UPDATES....</string>
 	
 	<string name="aboutOneOne">This application was built with Appcelerator, the number one platform for cloud service-enabled mobile applications.</string>  

@@ -1,10 +1,10 @@
 <Alloy>
 	<View id="index" class="container">
 		<View id="dashboard" formFactor="handheld">
-			<View id="now">
+			<ScrollView id="now">
 				<Label id="lblHome" text="ticonf.eu is a new mobile development conference primarily based around JavaScript and Appcelerator Titanium. It's a 2-day, not-for-profit, community run event featuring some of the best JavaScript and Titanium Mobile developers from Europe and the UK. The event is to take place between the 23rd-24th of February 2013 - entry and tickets are open to all regardless of your skill level! We welcome beginners and experts alike."></Label>
-				<Label id="lblEventBrite" text="Buy your ticket via EventBrite €129."></Label>
-			</View>
+				<Label id="lblEventBrite" text="Buy your ticket via EventBrite."></Label>
+			</ScrollView>
 
 		</View>
 		
@@ -20,8 +20,8 @@
 			
 		</View>
 		
-		<View id="sponsorsContainer">
-				<Label id="sponsorHeader" textid="sponsorHeader"/>
+		<View id="sponsorsContainer" backgroundColor="#ffffff" left="10" right="10">
+				<Label id="sponsorHeader" textid="sponsorHeader" top="10" backgroundColor="#ffffff"/>
 				<View id="sponsorBox" class="appContent">
 					<ScrollView scrollType="horizontal">
 						<View id="horizontalContainer">
@@ -32,12 +32,24 @@
 							<View class="spacer"/>
 							<ImageView image="/img/home/sponsors/rlb_logo.png" width="145dp" height="26dp"/>
 							<View class="spacer"/>
+							<ImageView image="/img/home/sponsors/tipsy3.jpg" height="39dp" width="94dp"/>
+							<View class="spacer"/>
+							<ImageView image="/img/home/sponsors/criteriastudio.png" width="70dp" height="35dp"/>
+							<View class="spacer"/>
+							<ImageView image="/img/home/sponsors/estudioalfa_logo.png" width="94dp" height="39dp"/>
+							<View class="spacer"/>
 						</View>
 						<View id="horizontalContainer2">
 							<View class="spacer"/>
 							<ImageView image="/img/home/sponsors/ms.png" width="79dp" height="33dp"/>
 							<View class="spacer"/>
-							<ImageView image="/img/home/sponsors/redhat.png" height="28" width="156dp"/>
+							<ImageView image="/img/home/sponsors/redhat.png" height="28dp" width="156dp"/>
+							<View class="spacer"/>
+							<ImageView image="/img/home/sponsors/jolicode.png" height="35dp" width="150dp"/>
+							<View class="spacer"/>
+							<ImageView image="/img/home/sponsors/featherdirect.png" height="41dp" width="156dp"/>
+							<View class="spacer"/>
+							<ImageView image="/img/home/sponsors/purplescout.png" width="70dp" height="35dp"/>
 							<View class="spacer"/>
 						</View>
 					</ScrollView>

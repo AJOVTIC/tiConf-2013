@@ -162,14 +162,14 @@
 
 '#horizontalContainer': {
 	height:'60dp',
-	width:'410dp',
+	width: '710dp',
 	layout:'horizontal',
 	top: '0dp'
 },
 
 '#horizontalContainer2': {
 	height:'60dp',
-	width:'410dp',
+	width:'710dp',
 	layout:'horizontal',
 	bottom: '0dp'
 },

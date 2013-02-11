@@ -1,7 +1,16 @@
 var Stream = require('TwitterStream');
 
-$.loading = Alloy.createController('loading');
-
+var spinner = Ti.UI.createImageView({
+	width: '62dp',
+	height: '62dp',
+	duration: 30
+});
+var spinnerImages = [];
+for(var i = 1; i <= 30; i++){
+	Ti.API.info('Adding loading image: ' + '/img/spinner/'  + i.toString() + '.png');
+	 spinnerImages.push('/img/spinner/'  + i.toString() + '.png');
+}
+spinner.images = spinnerImages;
 function createRow(data) {
 
 	if (!data) {
@@ -36,13 +45,13 @@ function createMoreRow() {
 }
 
 function showActivityIndicator() {
-	$.index.add($.loading.getView());
-	$.loading.start();
+	$.index.add(spinner);
+	spinner.start();
 }
 
 function hideActivityIndicator() {
-	$.loading.stop();
-	$.index.remove($.loading.getView());
+	spinner.stop();
+	$.index.remove(spinner);
 }
 
 function fetchTwitterStream(refreshOrAppend) {

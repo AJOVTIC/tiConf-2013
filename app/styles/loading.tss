@@ -9,8 +9,8 @@
 },
 
 '#loader': {
-	width:'75dp',
-	height:'46dp'
+	width:'63dp',
+	height:'63dp'
 },
 
 '#message': {

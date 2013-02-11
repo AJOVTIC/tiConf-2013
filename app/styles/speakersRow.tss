@@ -7,7 +7,7 @@
 "#name": {
 	left: 120,
 	top: 20,
-	color: "#0574bf",
+	color: "#d8805c",
 	font: {
 		fontSize: 18,
 		fontWeight: 'bold'
@@ -17,7 +17,7 @@
 "#byline": {
 	left: 123,
 	top: 40,
-	color: "#0574bf",
+	color: "#000",
 	font: {
 		fontSize: 12
 	}

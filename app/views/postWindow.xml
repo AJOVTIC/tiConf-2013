@@ -5,7 +5,7 @@
 				<ImageView id="backImage"/>
 			</View>
 			
-			<Label id="logo" textid="hashtag"/>
+			<Label id="logo" color="#fff" textid="hashtag"/>
 			<View id="underline"/>
 		</View>
 		

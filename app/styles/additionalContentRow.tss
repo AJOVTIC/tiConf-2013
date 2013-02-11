@@ -1,13 +1,14 @@
 "#row": {
-	height: 100,
+	height: 80,
 	selectedBackgroundColor:'#9a9a9a',
 	className:'Row'
 },
 
 "#title": {
-	left: 20,
+	left: 10,
+	right: 10,
 	top: 20,
-	color: "#0574bf",
+	color: "#d8805c",
 	font: {
 		fontSize: 18,
 		fontWeight: 'bold'
@@ -17,7 +18,7 @@
 "#author": {
 	left: 20,
 	top: 50,
-	color: "#0574bf",
+	color: "#000",
 	font: {
 		fontSize: 16
 	}

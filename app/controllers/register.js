@@ -34,6 +34,10 @@ if (OS_IOS) {
 		doScroll(180);
 	}
 	
+	if(Ti.Platform.displayCaps.platformHeight > 480){
+		$.index.backgroundImage = '/img/login/login-568h@2x.png'
+	}
+	
 	$.firstName.on('focus', moveScrollerUp);
 	$.firstName.on('return', moveScrollerDown);
 	$.lastName.on('focus', moveScrollerUp);

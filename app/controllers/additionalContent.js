@@ -3,10 +3,26 @@ var ui = require('ui');
 var SLIDES = 'SLIDES';
 var VIDEOS = 'VIDEOS';
 
-$.loading = Alloy.createController('loading');
-
-$.content.add($.loading.getView());
-$.loading.start();
+var spinnerView = Ti.UI.createView({
+	backgroundColor: '#fff',
+	opacity: 0.5,
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL
+});
+var spinner = Ti.UI.createImageView({
+	width: '62dp',
+	height: '62dp',
+	duration: 30
+});
+var spinnerImages = [];
+for(var i = 1; i <= 30; i++){
+	Ti.API.info('Adding loading image: ' + '/img/spinner/'  + i.toString() + '.png');
+	 spinnerImages.push('/img/spinner/'  + i.toString() + '.png');
+}
+spinner.images = spinnerImages;
+$.content.add(spinnerView);
+$.content.add(spinner);
+spinner.start();
 
 function createRow(data) {
 	if (!data) {
@@ -84,8 +100,8 @@ if (!Alloy.isTablet) {
 				
 			});
 
-			$.content.remove($.loading.getView());
-			$.loading.stop();
+			$.content.remove(spinnerView);
+			spinner.hide();
 			
 		});
 

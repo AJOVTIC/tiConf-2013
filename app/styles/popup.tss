@@ -18,7 +18,7 @@
     left: 10,
     backgroundColor: "#52D3FE",
     border: 10,
-    borderColor: "#52D3FE",
+    borderColor: "#663333",
     borderRadius: 10,
     borderWidth: 4,
     // zIndex: -1
@@ -29,8 +29,8 @@
         fontSize: 18,
         fontWeight: "bold"
     },
-    backgroundColor: "#52D3FE",
-    borderColor: "#52D3FE",
+    backgroundColor: "#663333",
+    borderColor: "#663333",
     color: "#fff",
     style: 0,
     borderRadius: 6,

@@ -1,14 +1,13 @@
-$.loader.images = [
-	'/img/loading/load-cloud1.png',
-	'/img/loading/load-cloud2.png',
-	'/img/loading/load-cloud3.png',
-	'/img/loading/load-cloud4.png',
-	'/img/loading/load-cloud5.png',
-	'/img/loading/load-cloud6.png',
-	'/img/loading/load-cloud7.png',
-	'/img/loading/load-cloud8.png',
-	'/img/loading/load-cloud9.png'
-];
+$.loader.images = [];
+
+$.setImages = function(){
+	if($.loader.images.length == 0){
+	   for(var i = 1; i <= 10; i++){
+		 Ti.API.info('Adding loading image: ' + '/img/spinner/'  + i.toString() + '.png');
+		 $.loader.images.push('/img/spinner/'  + i.toString() + '.png');
+	   }
+	}
+};
 
 $.start = function() {
 	$.loader.start();

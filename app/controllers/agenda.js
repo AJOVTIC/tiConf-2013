@@ -8,15 +8,39 @@ var dayOne = [],
 	dayOneDate = moment('Feb 24, 2013'),
 	days = [ 'sat', 'sun'];
 	
-$.loading = Alloy.createController('loading');
-$.index.add($.loading.getView());
-$.loading.start();
+//$.loading = Alloy.createController('loading');
+//$.loading.setImages();
+
+var spinnerView = Ti.UI.createView({
+	backgroundColor: '#fff',
+	opacity: 0.5,
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL
+});
+
+var spinner = Ti.UI.createImageView({
+	width: '62dp',
+	height: '62dp',
+	duration: 30
+});
+var spinnerImages = [];
+for(var i = 1; i <= 30; i++){
+	Ti.API.info('Adding loading image: ' + '/img/spinner/'  + i.toString() + '.png');
+	 spinnerImages.push('/img/spinner/'  + i.toString() + '.png');
+}
+spinner.images = spinnerImages;
+$.index.add(spinnerView);
+$.index.add(spinner);
+spinner.start();
+//$.loading.start();
+
 
 //Load agenda data
 
 Agenda.get(function(data) {
-	$.loading.stop();
-	$.index.remove($.loading.getView());
+	data = data.sort(function(a,b) { return a.order - b.order } );
+	$.index.remove(spinnerView);
+	spinner.hide();
 	for (var i = 0; i < data.length; i++) {
 		var session = data[i],
 			// sessionStart = session.time,
@@ -69,6 +93,7 @@ if (!Alloy.isTablet) {
 
 //show session detail drawer
 function showDetail(e) {
+	
 	var sessionData;
 	if (OS_IOS) {
 		sessionData = e.row._data;
@@ -83,6 +108,7 @@ function showDetail(e) {
 			sessionData = e.source.parent._data;
 		}
 	}
+	
 	
 	//TODO Don't use app-level events
 	Ti.App.fireEvent('app:open.drawer', {

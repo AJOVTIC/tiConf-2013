@@ -59,35 +59,41 @@ if (Alloy.isTablet) {
 	//Public API to manually set the tablet nav position
 	$.setNav = function(name) {
 		doTab(name,true);
+		setBackVisible(true);
 	};
 }
 
 //Public component API
-/*$.setBackVisible = function(toggle) {
+$.setBackVisible = function(toggle) {
 	if (!Alloy.isTablet) {
 		if (toggle) {
 			$.back.enabled = true;
 			$.back.visible = true;
-			$.profile.visible = false;
-			$.profile.enabled = false;
 		}
 		else {
 			$.back.enabled = false;
 			$.back.visible = false;
-			$.profile.visible = true;
-			$.profile.enabled = true;
 		}
 	}
-};*/
+};
+
+Ti.App.addEventListener('showBackButton', function(e){
+	$.back.enabled = true;
+	$.back.visible = true;
+});
+Ti.App.addEventListener('hideBackButton', function(e){
+	$.back.enabled = false;
+	$.back.visible = false;
+});
 
 //Back isn't there on tablet
-/*if ($.back) {
+if ($.back) {
 	$.back.on('click', function() {
 		if ($.back.enabled) {
 			$.trigger('back');
 		}
 	});
-}*/
+}
 
 /*function profileOn() {
 	$.profile.enabled = true;
@@ -95,17 +101,10 @@ if (Alloy.isTablet) {
 }*/
 
 
-/*Ti.App.addEventListener('app:close.drawer', function(e) {
+Ti.App.addEventListener('app:close.drawer', function(e) {
 	//Right now we only go one level deep with the drawer on handheld
-	if (e.controller === 'profile' || !Alloy.isTablet) {
-		profileOn();
-	}
-	
-	//On all others, assume we need to re-enable both
-	else {
-		profileOn();
-	}
-});*/
+	Ti.App.fireEvent('hideBackButton');
+});
 
 function openEventbrite() {
 	Ti.Platform.openURL('http://ticonf-2013.eventbrite.com/');

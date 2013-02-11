@@ -1,11 +1,12 @@
 '.container': {
 	height: Ti.UI.FILL,
-	width: Ti.UI.FILL
+	width: Ti.UI.FILL,
+	backgroundImage: '/img/login/login.png' 
 },
 
 '#content': {
 	layout: 'vertical',
-	top: 200,
+	top: 230,
 	bottom: 10,
 	width: 250
 },

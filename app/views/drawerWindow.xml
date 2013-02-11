@@ -1,8 +1,8 @@
 <Alloy>
 	<Window id="win">
 		<View id="header">
-			<View id="back">
-				<ImageView id="backImage"/>
+			<View id="back" visible="true">
+				<ImageView id="backImage" visible="true"/>
 			</View>
 			
 			<ImageView id="logo"/>

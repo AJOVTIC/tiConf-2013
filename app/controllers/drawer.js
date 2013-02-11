@@ -23,6 +23,8 @@ $.openDrawer = function(controller, contextData) {
 	var c = Alloy.createController(controller, contextData);
 	$.content.add(c.getView());
 	
+	Ti.App.fireEvent('showBackButton');	
+	
 	//handle animation of self
 	$.container.animate({
 		right:0,

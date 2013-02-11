@@ -7,8 +7,8 @@
 		<View id="contentTypes" class="contentHeader">
 			
 		</View>
-		<View id="slides" />
-		<View id="video" />
+		<View id="slides" color="#d8805c" />
+		<View id="video" color="#d8805c" />
 		<TableView id="presentation" class="contentTable" />
 	</View>
 </Alloy>

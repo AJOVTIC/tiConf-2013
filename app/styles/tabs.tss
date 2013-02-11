@@ -33,5 +33,5 @@
 	image:'/img/tabs/btn-speakers-default.png'
 },
 '#additionalContentIcon': {
-	image:'/img/tabs/btn-speakers-default.png'
+	image:'/img/tabs/btn-additionalContent-default.png'
 }

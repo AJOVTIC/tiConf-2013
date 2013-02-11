@@ -2,8 +2,8 @@
 	<View id="container">	
 		<ImageView id="logo"/>
 		
-		<View id="back" formFactor="handheld">
-			<ImageView id="backImage"/>
+		<View id="back" formFactor="handheld" visible="false">
+			<ImageView id="backImage" visible="true"/>
 		</View>
 		
 		<!-- Tablet only nav structure -->

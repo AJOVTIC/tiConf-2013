@@ -1,10 +1,19 @@
 
 var Speakers = require('Speakers');
 
-$.loading = Alloy.createController('loading');
-
-$.content.add($.loading.getView());
-$.loading.start();
+var spinner = Ti.UI.createImageView({
+	width: '62dp',
+	height: '62dp',
+	duration: 30
+});
+var spinnerImages = [];
+for(var i = 1; i <= 30; i++){
+	Ti.API.info('Adding loading image: ' + '/img/spinner/'  + i.toString() + '.png');
+	 spinnerImages.push('/img/spinner/'  + i.toString() + '.png');
+}
+spinner.images = spinnerImages;
+$.content.add(spinner);
+spinner.start();
 
 function createRow(data) {
 
@@ -28,8 +37,7 @@ Speakers.get(function(data) {
 
     $.speakersTableView.setData(rows);
 
-    $.content.remove($.loading.getView());
-    $.loading.stop();
+    spinner.hide();
 });
 
 
