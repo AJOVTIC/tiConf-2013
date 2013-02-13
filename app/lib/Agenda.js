@@ -1,3 +1,5 @@
+var Alloy = require('alloy');
+
 var Dpd = require('Dpd');
 
 var Agenda = new Dpd(Alloy.CFG.baseUrl + 'agenda'); ///?{"$sort":"order"}

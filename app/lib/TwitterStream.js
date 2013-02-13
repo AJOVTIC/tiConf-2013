@@ -1,3 +1,5 @@
+var Alloy = require('alloy');
+
 var Stream = {
 	baseUrl: Alloy.CFG.twitterBaseUrl,
 	url: Alloy.CFG.twitterStreamUrl,

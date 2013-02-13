@@ -1,3 +1,6 @@
+var Alloy = require('alloy');
+
+
 /*
  * Smallish shared UI helper libraries
  */

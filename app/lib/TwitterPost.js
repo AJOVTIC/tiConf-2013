@@ -8,28 +8,6 @@ var BH = new BirdHouse({
 });
 
 var TwitterPost = {
-	/*tweet: function(message, onSuccess, onError) {
-		BH.tweet(message, function(e) {
-			if(e == 0) {
-				if (onError) {
-					onError();
-				}
-				else {
-					alert('Sorry, there was an error posting your tweet. Try again, and if the problem persists, restart the app.');
-				}
-			} else {
-				if (onSuccess) {
-					onSuccess();
-				}
-				else {
-					Ti.UI.createAlertDialog({
-						title: 'Tweet posted',
-						message: "#tiConf tweet has been posted!"
-					}).show();
-				}
-			}
-		});
-	}*/
 	tweet: function(text, callback, optionalImage) {
 
 		if(typeof text == "function" && typeof callback == "undefined") {
@@ -41,8 +19,6 @@ var TwitterPost = {
 
 		var obj = this;
 		obj.mytweet = text;
-
-		Ti.API.info('authorized? ' + BH.authorized());
 		
 		if(BH.authorized() === false) {
 			BH.authorize(function(resp) {

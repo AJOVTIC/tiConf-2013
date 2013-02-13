@@ -1,3 +1,5 @@
+var Alloy = require('alloy');
+
 var Dpd = require('Dpd');
 
 var Videos = new Dpd(Alloy.CFG.baseUrl + 'videos/');
