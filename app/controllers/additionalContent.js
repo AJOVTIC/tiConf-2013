@@ -77,7 +77,7 @@ if (!Alloy.isTablet) {
 
 			$.headerView.on('change', function(e) {
 				selection = e.selection;
-				if (selection == SLIDES) {
+				if (selection.toUpperCase() == SLIDES) {
 					$.presentation.setData(createRows(Slides));
 				}
 				else {
