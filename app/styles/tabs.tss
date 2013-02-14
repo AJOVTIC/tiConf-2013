@@ -1,3 +1,6 @@
+'#root': {
+	layout: 'horizontal'	
+},
 '.container': {
 	backgroundImage:'/img/tabs/bg-tab.png',
 	height:'46dp',

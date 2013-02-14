@@ -8,7 +8,11 @@ var tabs = [
 	'additionalContent'
 ];
 
-var tabWidth = Ti.Platform.displayCaps.platformWidth / tabs.length;
+var tabWidth = (Ti.Platform.displayCaps.platformWidth / tabs.length).toFixed(2);
+
+Ti.API.info('Ti.Platform.displayCaps.platformWidth: ' + Ti.Platform.displayCaps.platformWidth);
+Ti.API.info('tabs.length: ' + tabs.length);
+Ti.API.info('tabWidth: ' + tabWidth);
 
 var tabPositions = {
 	
@@ -16,7 +20,13 @@ var tabPositions = {
 
 // tabs should really use "horizontal" layout
 for (var i = 0; i < tabs.length; ++i) {
-	tabPositions[tabs[i]] = $[tabs[i]].left = tabWidth * i;
+	Ti.API.info(i);
+	// $[tabs[i]].width = tabWidth;
+	// tabPositions[tabs[i]] = $[tabs[i]].left = tabWidth * i;
+	tabPositions[tabs[i]] = tabWidth * i;
+	Ti.API.info($[tabs[i]]);
+	// Ti.API.info($[tabs[i]].getView());
+	Ti.API.info($[tabs[i]].left);
 	if (tabs[i] != 'post') {
 		$[tabs[i]].on('click', (function(name) {
 			return function() {
