@@ -23,10 +23,10 @@ var spinner = Ti.UI.createImageView({
 	height: '62dp',
 	duration: 30
 });
+
 var spinnerImages = [];
 for(var i = 1; i <= 30; i++){
-	Ti.API.info('Adding loading image: ' + '/img/spinner/'  + i.toString() + '.png');
-	 spinnerImages.push('/img/spinner/'  + i.toString() + '.png');
+	spinnerImages.push('/img/spinner/'  + i.toString() + '.png');
 }
 spinner.images = spinnerImages;
 $.index.add(spinnerView);
