@@ -12,6 +12,16 @@
 		fontWeight: "bold"
 	}
 },
+"#title[platform=android]": {
+	color: "#787878",
+	top: 15,
+	left: 15,
+	right: 15,
+	font: {
+		fontSize: 22,
+		fontWeight: "bold"
+	}
+},
 
 ".subtitle": {
 	color: "#787878",
@@ -23,6 +33,16 @@
 		fontStyle: "italic"
 	}
 },
+".subtitle[platform=android]": {
+	color: "#787878",
+	top: 4,
+	left: 15,
+	right: 15,
+	font: {
+		fontSize: 16,
+		fontStyle: "italic"
+	}
+},
 
 "#description": {
 	top: 20,
@@ -31,5 +51,14 @@
 	color: "#000",
 	font:{
 		fontSize: 14
+	}
+}
+"#description[platform=android]": {
+	top: 25,
+	left: 15,
+	right: 15,
+	color: "#000",
+	font:{
+		fontSize: 18
 	}
 }

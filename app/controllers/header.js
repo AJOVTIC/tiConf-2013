@@ -77,14 +77,14 @@ $.setBackVisible = function(toggle) {
 	}
 };
 
-/*Ti.App.addEventListener('showBackButton', function(e){
+Ti.App.addEventListener('showBackButton', function(e){
 	$.back.enabled = true;
 	$.back.visible = true;
 });
 Ti.App.addEventListener('hideBackButton', function(e){
 	$.back.enabled = false;
 	$.back.visible = false;
-});*/
+});
 
 //Back isn't there on tablet
 if ($.back) {

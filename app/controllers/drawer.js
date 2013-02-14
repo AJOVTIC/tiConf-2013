@@ -2,15 +2,15 @@ var drawerWidth = 364; //tablet width scalar
 
 //Set drawer width to  platform width for small form
 if (!Alloy.isTablet) {
-	drawerWidth = Ti.Platform.displayCaps.platformWidth;
+	/*drawerWidth = Ti.Platform.displayCaps.platformWidth;
 	$.container.width = drawerWidth;
-	$.container.right = drawerWidth*-1;
+	$.container.right = drawerWidth * -1;*/
 }
 
 $.closeDrawer = function(cb) {
 	//handle animation of self
 	$.container.animate({
-		right:'-'+drawerWidth,
+		right:'-' + drawerWidth,
 		duration:250
 	}, function() {
 		$.trigger('close');
@@ -27,8 +27,8 @@ $.openDrawer = function(controller, contextData) {
 	
 	//handle animation of self
 	$.container.animate({
-		right:0,
-		duration:250
+		right: 0,
+		duration: 250
 	}, function() {
 		$.trigger('open');
 	});

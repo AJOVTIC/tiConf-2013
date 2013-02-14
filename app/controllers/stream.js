@@ -6,8 +6,7 @@ var spinner = Ti.UI.createImageView({
 	duration: 30
 });
 var spinnerImages = [];
-for(var i = 1; i <= 30; i++){
-	Ti.API.info('Adding loading image: ' + '/img/spinner/'  + i.toString() + '.png');
+for(var i = 1; i <= 30; i++) {
 	 spinnerImages.push('/img/spinner/'  + i.toString() + '.png');
 }
 spinner.images = spinnerImages;
@@ -41,7 +40,7 @@ function createRows(results, toCreateMoreRow) {
 }
 
 function createMoreRow() {
-	return Ti.UI.createTableViewRow({ title: 'Load more ...', height: 75, _isLoadMore: true, font: { fontSize: 14 } });
+	return Ti.UI.createTableViewRow({ title: 'Load more ...', height: 75, _isLoadMore: true, font: { fontSize: 14 }, color: "#000" });
 }
 
 function showActivityIndicator() {

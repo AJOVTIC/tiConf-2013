@@ -49,6 +49,7 @@ function showPopup(data) {
         text: data.name,
         top: 40,
         right: 10,
+        color: "#d8805c",
         font: {
             fontSize: 16,
             fontWeight: 'bold'
@@ -60,6 +61,7 @@ function showPopup(data) {
         top: 60,
         right: 10,
         width: '45%',
+        color: "#000",
         textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
         font: {
             fontSize: 12
@@ -71,6 +73,7 @@ function showPopup(data) {
         top: 180,
         right: 10,
         width: '90%',
+        color: "#000",
         font: {
             fontSize: 12
         }

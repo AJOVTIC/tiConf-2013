@@ -55,7 +55,7 @@ if (!Alloy.isTablet) {
 	$.headerView = new ui.HeaderView({
 		title: '',
 		optionWidth: 150,
-		options:[ L('additionalContentSlides'), L('additionalContentVideo') ]
+		options:[ 'additionalContentSlides', 'additionalContentVideo' ]
 	});
 
 	$.contentTypes.add($.headerView);

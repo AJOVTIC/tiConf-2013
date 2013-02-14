@@ -15,6 +15,17 @@
 		fontWeight: 'bold'
 	}
 },
+"#from_user[platform=android]": {
+	left: 80,
+	top: 10,
+	right: 10,
+	// height: 25,
+	color: "#0574bf",
+	font: {
+		fontSize: 16,
+		fontWeight: 'bold'
+	}
+},
 
 "#profile_image_url": {
 	left: 5,
@@ -30,5 +41,15 @@
 	bottom: 5,
 	font: {
 		fontSize: 12
+	}
+},
+
+"#text[platform=android]": {
+	left: 80,
+	right: 10,
+	top: 30,
+	bottom: 5,
+	font: {
+		fontSize: 14
 	}
 }

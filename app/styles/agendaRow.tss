@@ -1,5 +1,5 @@
 "#row": {
-	height: 70,
+	height: 90,
 	selectedBackgroundColor: "#cdcdcd",
 	className: "agendaRow"
 },
@@ -16,11 +16,30 @@
 	}
 },
 
+"#title[platform=android]": {
+	top: 20,
+	left: 10,
+	ellipsize: true,
+	wordWrap: false,
+	color: "#373e47",
+	font: {
+		fontWeight: "bold",
+		fontSize: 18
+	}
+},
+
 "#speakerName": {
 	bottom: 10,
 	left: 10,
 	font: {
 		fontSize: 13
+	}
+},
+"#speakerName[platform=android]": {
+	bottom: 20,
+	left: 10,
+	font: {
+		fontSize: 17
 	}
 },
 
@@ -29,5 +48,12 @@
 	bottom: 10,
 	font: {
 		fontSize: 11
+	}
+}
+"#time[platform=android]": {
+	right: 10,
+	bottom: 20,
+	font: {
+		fontSize: 15
 	}
 }
