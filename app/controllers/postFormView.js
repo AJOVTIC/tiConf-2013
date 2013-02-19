@@ -132,16 +132,14 @@ $.submit.on('click', function() {
 		
 		var tweet = val + tag;
 
-		Ti.API.info('Tweet: ' + tweet);
-
 		$.postContainer.add($.loading.getView());
 		$.loading.start();
 
 		Twitter.tweet(
 			tweet,
 			function(success) {
-				$.loading.stop();
 				$.postContainer.remove($.loading.getView());
+				$.loading.stop();
 				if (success) {
 					$.trigger('success');
 					alert('Tweeted succesfully!');

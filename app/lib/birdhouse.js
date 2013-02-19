@@ -1298,7 +1298,7 @@ function BirdHouse(params) {
             };
             // on error, show message
             XHR.onerror = function(e) {
-                Ti.API.debug("XHR.onerror "+e);
+                Ti.API.debug("XHR.onerror "+ JSON.stringify(e));
                 pErrorCallback(false);
             }
             // if we are getting request tokens do not set the HTML header
