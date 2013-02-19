@@ -4,6 +4,12 @@
 	className:'Row'
 },
 
+"#row[platform=android]": {
+	height: 90,
+	selectedBackgroundColor:'#9a9a9a',
+	className:'Row'
+},
+
 "#title": {
 	left: 10,
 	right: 10,

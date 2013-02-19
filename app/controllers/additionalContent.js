@@ -16,7 +16,7 @@ var spinner = Ti.UI.createImageView({
 });
 var spinnerImages = [];
 for(var i = 1; i <= 30; i++){
-	Ti.API.info('Adding loading image: ' + '/img/spinner/'  + i.toString() + '.png');
+	// Ti.API.info('Adding loading image: ' + '/img/spinner/'  + i.toString() + '.png');
 	 spinnerImages.push('/img/spinner/'  + i.toString() + '.png');
 }
 spinner.images = spinnerImages;
@@ -75,8 +75,10 @@ if (!Alloy.isTablet) {
 
 			var selection = SLIDES;
 
+
 			$.headerView.on('change', function(e) {
-				selection = e.selection;
+				selection = L(e.selection);
+				Ti.API.info(selection);
 				if (selection.toUpperCase() == SLIDES) {
 					$.presentation.setData(createRows(Slides));
 				}
