@@ -40,16 +40,21 @@ var TwitterPost = {
 				});
 			}
 			else {
-				
-				var f = Ti.Filesystem.getFile(Ti.Filesystem.tempDirectory, "upload_photo.jpg");
-				f.write(optionalImage);
 
-				// optionalImage = f.exists() && f.read();
+				var media, f;
+				if (Ti.Platform.osname == "android") {
+					f = Ti.Filesystem.getFile(Ti.Filesystem.tempDirectory, "upload_photo.jpg");
+					f.write(optionalImage);
+					media = f;
+				}
+				else {
+					media = optionalImage;
+				}
 				
 				BH.sendTwitterImage(
 					{
 						status: text,
-						media: f
+						media: media
 					}, function() {
 							typeof callback == "function" && callback(true);
 							return true;
