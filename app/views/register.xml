@@ -1,5 +1,23 @@
 <Alloy>
-	<View id="index" class="container">
+	<ScrollView id="index" class="container" platform="android">
+		<ImageView id="logo" />
+		<View id="content">
+			<View id="firstNameWrapper" class="tfWrapper">
+				<TextField id="firstName" />
+			</View>
+			<View id="lastNameWrapper" class="tfWrapper">
+				<TextField id="lastName" />
+			</View>
+			<View id="emailWrapper" class="tfWrapper">
+				<TextField id="email" />
+			</View>
+			<View id="buttonContainer">
+				<Button id="register" titleid="register" />
+				<Button id="skip" titleid="skip" />
+			</View>
+		</View>
+	</ScrollView>
+	<View id="index" class="container" platform="ios">
 		<ImageView id="logo" />
 		<View id="content">
 			<View id="firstNameWrapper" class="tfWrapper">
