@@ -42,12 +42,14 @@ var TwitterPost = {
 			else {
 				
 				var f = Ti.Filesystem.getFile(Ti.Filesystem.tempDirectory, "upload_photo.jpg");
-				optionalImage = f.exists() && f.read();
+				f.write(optionalImage);
+
+				// optionalImage = f.exists() && f.read();
 				
 				BH.sendTwitterImage(
 					{
 						status: text,
-						media: optionalImage
+						media: f
 					}, function() {
 							typeof callback == "function" && callback(true);
 							return true;

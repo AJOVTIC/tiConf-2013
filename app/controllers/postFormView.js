@@ -30,9 +30,8 @@ $.blur = function() {
 $.camera.on('click', function() {
 	//for now, need to disable "choose from gallery" for android
 	var options = [L('camera')];
-	if (OS_IOS) {
-		options.push(L('photoGallery'));
-	}
+	options.push(L('photoGallery'));
+	
 	options.push(L('cancel'));
 	
 	var od = Ti.UI.createOptionDialog({
