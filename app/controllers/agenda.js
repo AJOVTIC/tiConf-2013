@@ -80,6 +80,7 @@ if (!Alloy.isTablet) {
 		else if (e.selection === days[1]) {
 			$.agendaTable.setData(dayTwo);
 		}
+		$.agendaTable.scrollToTop(0);
 	});
 	
 	//reset to day one if need be, since Android will not retain animation positions when a view has been unloaded from the hierarchy
